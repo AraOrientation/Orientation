@@ -1,0 +1,10 @@
+/*Custom StyleSheet for Orientation Template*/
+
+.orientation-main{
+    width: 100vw;
+    height: 100vh;
+}
+
+.orientation-background-color{
+    background-color: #6bdbaa;
+}
