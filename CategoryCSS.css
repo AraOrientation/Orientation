@@ -10,10 +10,35 @@
     background-color: #6bdbaa;
 }
 
-.orientation-background{
+/* Main Divs */
+#orientation-background{
     posistion: fixed;
+    width: 100%;
+    height: 100%;
 }
 
-.orientation-overlay{
+#orientation-overlay{
     posistion: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#orientation-content{
+    width: 100%;
+    height: 100%;
+}
+
+/* Content div */
+#orientation-top{
+    
+    
+}
+
+/* Navigation div */
+#orientation-nav{
+    
+}
+
+.orientation-nav-element{
+    
 }
