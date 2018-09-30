@@ -1,0 +1,33 @@
+/*Custom StyleSheet for Orientation Template*/
+
+.orientation-main{
+    width: 100vw;
+    height: 100vh;
+}
+
+.orientation-background-color{
+    background-color: #6bdbaa;
+}
+
+.orientation-tile{
+    background-color: rgb(80, 172, 200);
+    color: rgb(255, 255, 255);
+    width: 196px;
+    height: 96px;
+}
+
+.orientation-tile-icon{
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.orientation-tile-inner{
+    justify-content: flex-end;
+}
+
+.orientation-icon{
+    width:200px;
+}
