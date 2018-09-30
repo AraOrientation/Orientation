@@ -49,9 +49,12 @@
 #orientation-background-image{
     height: 100%;
     width: auto;
+    posistion: fixed;
+    clip-path: polygon(0,0, 30% 0, 0, 100%);
 }
 
 #orientation-background-color{
     height:100%;
-    width: 90%;
+    width: 100%;
+    posistion: fixed;
 }
