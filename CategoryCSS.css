@@ -12,19 +12,19 @@
 
 /* Main Divs */
 #orientation-background{
-    position: relative;
+    position: fixed;
     width: 100%;
     height: 100%;
 }
 
 #orientation-overlay{
-    position: relative;
+    position: fixed;
     width: 100%;
     height: 100%;
 }
 
 #orientation-content{
-    position: relative;
+    position: fixed;
     width: 100%;
     height: 100%;
 }
