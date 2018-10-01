@@ -166,4 +166,15 @@
     #orientation-display{
         font-size: 1em;
     }
+    #orientation-title{
+        padding-left : 0;
+        text-align: center;
+    }
+    .orientation-main h2{
+        font-size: 1em;
+        color: black;
+        font-weight: normal;
+        text-shadow: none;
+        margin: 0;
+    }
 }
