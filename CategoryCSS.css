@@ -81,7 +81,7 @@
 /*Background div */
 #orientation-background-image{
     object-fit: cover;
-    clip-path: url(#orientation-clip);
+    clip-path: polygon(0 0, 30% 0, 0 100%);
     position: fixed;
     height: 90%;
     width: 100%;
