@@ -73,11 +73,11 @@
 #orientation-title{
     flex-grow:1;
     justify-content: center;
-    padding-left: 4vmin;
+    padding-left: 5vmin;
 }
 
 #orientation-display{
-    padding: 10%;
+    padding: 5%;
     flex-grow:1;
     justify-content: center;
     align-items: center;
