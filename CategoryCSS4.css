@@ -8,12 +8,15 @@
     position: fixed;
     font-size: 3em;
     top: 50%;
-    right: 0;
+    right: 5;
+    color: white;
 }
 .orientation-leftarrow{
     position: fixed;
     font-size: 3em;
-    top: 50%
+    top: 50%;
+    left: 5%;
+    color: white;
 }
 
 #orientation-background-image{
