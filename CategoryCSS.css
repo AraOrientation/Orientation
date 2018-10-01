@@ -66,3 +66,7 @@
     width: 100%;
     position: fixed;
 }
+
+flex-container-rows{
+   -ms-flex-direction: row;
+    flex-direction: row;
