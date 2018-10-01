@@ -91,7 +91,17 @@
 }
 
 @media screen and (max-width: 70em) {
-#orientation-content{
-    width: 100%;
-    margin: 0;
+    #orientation-content{
+        width: 100%;
+        margin: 0;
+    }
+    #orientation-nav{
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+    .orientation-nav-element{
+        flex-grow: 1;
+        margin: 2%
+    }
 }
