@@ -71,8 +71,10 @@
 }
 
 #orientation-display{
+    padding: 1em;
     flex-grow:1;
     justify-content: center;
+    align-items: center;
 }
 
 /*Background div */
