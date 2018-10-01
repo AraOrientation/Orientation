@@ -1,50 +1,93 @@
-<link rel="stylesheet" type="text/css" href="https://rawgit.com/AraOrientation/Orientation/master/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/AraOrientation/Orientation/master/CategoryCSS.css">
 <script src="https://rawgit.com/AraOrientation/Orientation/master/CategoryScript.js"></script>
 
 <div class="orientation-main">
-    <div class="flex-xs-1 flex-container flex-container-columns orientation-background-color">
+    
+    <div class="orientation-full orientation-background-color"></div>
         
+    <img id="orientation-background-image" ng-src="{{ page.model.data.properties.backImage }}">
         
-        <div class="flex-header wrapper bg-light b-b">
-            <h3 class="h3 font-thin" ng-bind-html="page.getTitle()"></h3>
-         </div>
-         
-        <div class="flex-xs-1 overflow-auto wrapper"> <section ng-bind-html="page.model.data.properties.content"></section>{{myday.user.name}}
-        <section>{{myday.user}}</section>
-        <br>
-        <section>{{myday.dashboard.tiles | filter : {'title':"Library"} }}</section>
-        <br>
-        <section>{{myday.configuration.apps | filter : {'name':"Library"} }}</section>
-        <br>
-        <section ng-bind-html="myday.dashboard.platform"></section>
-        <br>
+    
+    <div id="orientation-content" class="flex-container flex-container-columns">
         
-        <div class="wrapper">
-            <img ng-src="{{ page.model.data.properties.backImage }}">
+        <div id="orientation-top" class="flex-container">
+            
+            <div id="orientation-title" class="flex-container flex-container-columns">
+                <h1>Library</h1>
+                <h2>Phone: 03 940 8089</h2>
+                <h2>Email: library@ara.ac.nz</h2>
+                <div id="orientation-links">
+                <a target="_blank" href="https://www.facebook.com/AraLibrary/">
+                    <i  class="fa fa-facebook-square orientation-icon"></i>
+                </a>
+                </div>
+            </div>
+            
+            <div id="orientation-display" class="flex-container flex-container-columns">
+                <p>Library (City campus, Madras Street, Christchurch) 
+                <br>
+                Monday - Friday 7am - 8pm<br>
+                Saturday 10am - 5pm
+                Sunday 12 noon - 5pm
+                <br>
+                Library (Woolston campus, Ensors Road, Christchurch) 
+                <br>
+                Monday - Thursday 8am - 6pm
+                Friday 8am - 4.30pm
+                Saturday - Sunday Closed
+                <br>
+                Library (Timaru campus, Arthur Street, Timaru) 
+                <br>
+                Monday - Friday 8am - 5pm
+                Saturday - Sunday Closed</p>
+    
+                <div class="tile orientation-tile">
+                    <a href="https://go.mydaycloud.com/pages/orientation/library?preview=true">
+                    <div class="tile-inner orientation-tile-inner">
+                    <header>
+                      <h2 class="ng-binding">Library</h2>
+        
+                      <i  class="fa fa-book orientation-tile-icon"></i>
+                    </header>
+                    </div>
+                    </a>
+                </div>
+            </div>
             
         </div>
-
-        <div class="wrapper">
-            <button onclick="test()">Click me!</button>
-        </div>
-        <div class="wrapper">
-            <img class="orientation-icon" ng-src="{{'https://mydayeu.blob.core.windows.net/' + myday.configuration.tenantId + '/pages/images/' + page.model.data.properties.icon + '-image-1.png'}}">
-        </div>
-        <div class="wrapper">
-            <div class="tile orientation-tile">
-                <a href="https://go.mydaycloud.com/pages/orientation/library?preview=true">
-                <div class="tile-inner orientation-tile-inner">
-                <header>
-                  <h2 class="ng-binding">Library</h2>
-    
-                  <i  class="fa fa-book orientation-tile-icon"></i>
-                </header>
-                </div>
-                </a>
-          </div>
-        </div>
         
-        
-        
+        <div id="orientation-nav" class="flex-container" >
+            <div class="orientation-nav-element">
+                <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png">
+                <i>Opening Hours</i>
+            </div>
+            <div class="orientation-nav-element">
+                <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png">
+                <i>Study Guides</i>
+            </div>
+            <div class="orientation-nav-element">
+                <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png">
+                <i>Ask Librarian</i>
+            </div>
+            <div class="orientation-nav-element">
+                <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png">
+                <i>Find Ebooks and more</i>
+            </div>
+            <div class="orientation-nav-element">
+                <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png">
+                <i>Photocopiers & printers</i>
+            </div>
+            <div class="orientation-nav-element">
+                <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png">
+                <i>FAQ</i>
+            </div>
+            <div class="orientation-nav-element">
+                <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/home-icon.png">
+                <i>Borrow Books</i>
+            </div>
+        </div>
     </div>
+    
+    
+    
 </div>
