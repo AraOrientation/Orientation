@@ -48,6 +48,7 @@
 /* Content div */
 #orientation-top{
     flex-grow: 3;
+    justify-content: center;
     
 }
 
@@ -71,14 +72,12 @@
 }
 
 #orientation-title{
-    flex-grow:1;
     justify-content: center;
     padding-left: 5vmin;
 }
 
 #orientation-display{
     padding: 5%;
-    flex-grow:1;
     justify-content: center;
     align-items: center;
     font-size: 1.3em;
