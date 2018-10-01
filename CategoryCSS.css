@@ -60,6 +60,7 @@
 #orientation-nav img{
     width: 5vmax;
     height: 5vmax;
+    margin: 0 auto;
 }
 
 #orientation-title{
