@@ -71,6 +71,7 @@
 
 #orientation-display{
     flex-grow:1;
+    justify-content: center;
 }
 
 /*Background div */
