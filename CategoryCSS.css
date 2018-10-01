@@ -7,6 +7,10 @@
     color: white;
 }
 
+h1{
+    font-size: 10vmax;
+}
+
 .orientation-background-color{
     background-color: #6bdbaa;
 }
@@ -47,6 +51,7 @@
 
 #orientation-title{
     flex-grow:1;
+    justify-content: space-around;
 }
 
 #orientation-display{
