@@ -31,13 +31,13 @@
 
 /* Content div */
 #orientation-top{
-    
+    flex-grow: 2;
     
 }
 
 /* Navigation div */
 #orientation-nav{
-    
+    flex-grow: 1;
 }
 
 .orientation-nav-element{
