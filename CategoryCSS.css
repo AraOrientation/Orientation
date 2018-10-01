@@ -44,6 +44,13 @@
     
 }
 
+#orientation-title{
+    flex-grow:1;
+}
+
+#orientation-display{
+    flex-grow:1;
+}
 
 /*Background div */
 #orientation-background-image{
