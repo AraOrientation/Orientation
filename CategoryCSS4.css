@@ -5,14 +5,14 @@
 }
 
 .orientation-rightarrow{
-    position: fixed;
+    position: absolute;
     font-size: 3em;
     top: 50%;
     right: 5%;
     color: white;
 }
 .orientation-leftarrow{
-    position: fixed;
+    position: absolute;
     font-size: 3em;
     top: 50%;
     left: 5%;
