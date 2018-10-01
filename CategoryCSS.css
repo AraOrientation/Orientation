@@ -56,7 +56,7 @@
 #orientation-background-image{
     object-fit: cover;
     clip-path: polygon(0 0, 30% 0, 0 100%);
-    posistion: fixed;
+    position: fixed;
 }
 
 #orientation-full{
