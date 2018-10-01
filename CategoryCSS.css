@@ -100,3 +100,10 @@
 #orientation-links{
     margin-top: 20px;   
 }
+
+#orientation-links i{
+    color: black;
+}
+#orientation-links i :hover{
+    color: #3B5998;
+}
