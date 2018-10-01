@@ -41,7 +41,7 @@
 
 /* Content div */
 #orientation-top{
-    flex-grow: 2;
+    flex-grow: 3;
     
 }
 
@@ -53,9 +53,9 @@
 
 .orientation-nav-element{
     display: flex;
-    justify-content: center;
     flex-direction: column;
     text-align: center;
+    
 }
 
 #orientation-nav img{
