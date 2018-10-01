@@ -50,10 +50,10 @@
     height: 100%;
     width: auto;
     posistion: fixed;
-    clip-path: polygon(0,0, 30% 0, 0, 100%);
+    clip-path: polygon(0 0, 30% 0, 0 100%);
 }
 
-#orientation-background-color{
+#orientation-full{
     height:100%;
     width: 100%;
     posistion: fixed;
