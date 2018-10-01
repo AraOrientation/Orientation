@@ -13,6 +13,12 @@
     padding-left: 2vmax;
 }
 
+.orientation-main h2{
+    font-size: 5vmax;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    padding-left: 2vmax;
+}
+
 .orientation-background-color{
     background-color: #6bdbaa;
 }
