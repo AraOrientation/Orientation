@@ -55,6 +55,11 @@
     
 }
 
+#orientation-nav img{
+    width: 5vmax;
+    height: 5vmax;
+}
+
 #orientation-title{
     flex-grow:1;
     justify-content: center;
