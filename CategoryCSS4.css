@@ -4,6 +4,18 @@
     color: black;
 }
 
+.orientation-rightarrow{
+    position: fixed;
+    font-size: 3em;
+    top: 50%
+    right: 0;
+}
+.orientation-leftarrow{
+    position: fixed
+    font-size:3em;
+    top: 50%
+}
+
 #orientation-background-image{
     object-fit: cover;
     position: absolute;
