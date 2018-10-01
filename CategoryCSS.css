@@ -49,6 +49,7 @@
 /* Navigation div */
 #orientation-nav{
     flex-grow: 1;
+    justify-content: space-evenly;
 }
 
 .orientation-nav-element{
