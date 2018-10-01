@@ -54,7 +54,7 @@
 
 .orientation-nav-element{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-direction: column;
 }
 
