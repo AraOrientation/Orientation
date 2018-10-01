@@ -91,6 +91,7 @@
     position: fixed;
     height: 90%;
     width: 100%;
+    opacity: 0.8;
 }
 
 .orientation-full{
