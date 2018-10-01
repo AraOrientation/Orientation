@@ -81,7 +81,7 @@
 /*Background div */
 #orientation-background-image{
     object-fit: cover;
-    clip-path: polygon(30vmax 0,0 50vmax, 0 0,80vmax 0,100vmax 30vmax,100vmax 0);
+    clip-path: polygon(25vmax 0,0 40vmax, 0 0,80vmax 0,100vmax 30vmax,100vmax 0);
     position: fixed;
     height: 90%;
     width: 100%;
