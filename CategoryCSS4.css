@@ -14,7 +14,7 @@
 #orientation-content{
     position: relative;
     width: 70em;
-    background-color: #e5e9ea;
+    background-color: rgb(127, 203, 255);
     margin: 0 auto;
     height: 100%;
     padding: 1em;
@@ -22,9 +22,10 @@
 
 .orientation-main h1{
     font-size: 12vmin;
-    color: #23b7e5;
+    color: white;
     font-weight: bold;
     text-align: center;
+    text-shadow: 3px 2px black;
 }
 
 /* Navigation div */
