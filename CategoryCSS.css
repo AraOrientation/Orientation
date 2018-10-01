@@ -9,14 +9,12 @@
 
 .orientation-main h1{
     font-size: 12vmin;
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: rgb(0,160,146);
 }
 
 .orientation-main h2{
     font-size: 3vmin;
-    color: white;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: rgb(0,160,146);
 }
 
 .orientation-background-color{
