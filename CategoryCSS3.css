@@ -147,4 +147,13 @@
     #orientation-top{
         flex-direction: column;
     }
+    #orientation-nav{
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+    .orientation-nav-element{
+        flex-grow: 1;
+        margin: 2%
+    }
 }
