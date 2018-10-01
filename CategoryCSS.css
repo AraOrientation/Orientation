@@ -107,3 +107,22 @@
 #orientation-links i :hover{
     color: #3B5998;
 }
+
+.orientation-tile{
+    background-color: rgb(80, 172, 200);
+    color: rgb(255, 255, 255);
+    width: 196px;
+    height: 96px;
+}
+
+.orientation-tile-icon{
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.orientation-tile-inner{
+    justify-content: flex-end;
+}
