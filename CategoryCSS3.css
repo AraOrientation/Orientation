@@ -153,6 +153,7 @@
 
     #orientation-top{
         flex-direction: column;
+        flex-grow: 1;
     }
     #orientation-nav{
         flex-wrap: wrap;
