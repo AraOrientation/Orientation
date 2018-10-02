@@ -81,6 +81,7 @@
 #orientation-nav img:hover{
     width: 8vmax;
     height: 8vmax;
+    cursor: pointer;
 }
 
 #orientation-title{
