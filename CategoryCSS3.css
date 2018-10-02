@@ -72,6 +72,17 @@
     margin: 0 auto;
 }
 
+#orientation-nav .selected img{
+    width: 8vmax;
+    height: 8vmax;
+    filter: hue-rotate(111deg);
+}
+
+#orientation-nav img:hover{
+    width: 8vmax;
+    height: 8vmax;
+}
+
 #orientation-title{
     justify-content: center;
     text-align: center;
