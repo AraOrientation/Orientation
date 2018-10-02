@@ -1,0 +1,195 @@
+/*Custom StyleSheet for Orientation Template*/
+
+/* Container Div */
+.orientation-main{
+    width: 100%;
+    height: 100%;
+    color: black;
+    background-color: #ffffff;
+    min-height: 50em;
+}
+
+.orientation-main h1{
+    font-size: 12vmin;
+    color: #00687c;
+    /* text-shadow: 3px 2px black; */
+    font-weight: bold;
+}
+
+.orientation-main h2{
+    font-size: 3vmin;
+    color: black;
+    margin: 0;
+}
+
+.orientation-background-color{
+    background-color: #edf1f2;
+}
+
+/* Main Divs */
+#orientation-background{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#orientation-overlay{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+#orientation-content{
+    position: relative;
+    height: 100%;
+    /* padding: 3em; */
+    padding-bottom: 0;
+}
+
+/* Content div */
+#orientation-top{
+    flex-grow: 3;
+    justify-content: center;
+    padding: 5%;
+}
+
+/* Navigation div */
+#orientation-nav{
+    flex-grow: 1;
+    justify-content: space-evenly;
+}
+
+.orientation-nav-element{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+#orientation-nav img{
+    width: 4vmax;
+    height: 4vmax;
+    margin: 0 auto;
+}
+
+#orientation-nav .selected img{
+    width: 6vmax;
+    height: 6vmax;
+    filter: hue-rotate(111deg);
+}
+
+#orientation-nav img:hover{
+    width: 6vmax;
+    height: 6vmax;
+    cursor: pointer;
+}
+
+#orientation-title{
+    justify-content: center;
+    text-align: center;
+}
+
+#orientation-display{
+    margin: 5%;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3em;
+    background-color: #bcdcea;
+}
+
+/*Background div */
+#orientation-background-image{
+    object-fit: cover;
+    clip-path: polygon(20vmax 0,0 30vmax, 0 0,80vmax 0,100vmax 30vmax,100vmax 0);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.orientation-full{
+    height:100%;
+    width: 100%;
+    position: absolute;
+}
+
+.orientation-icon{
+    font-size: 3em;
+}
+
+#orientation-links{
+    margin-top: 20px;   
+}
+
+#orientation-links i{
+    color: #00687c;
+    text-shadow: 1px 1px black;
+}
+#orientation-links i:hover{
+    color: #3B5998;
+}
+
+.orientation-tile{
+    background-color: rgb(80, 172, 200);
+    color: rgb(255, 255, 255);
+    width: 196px;
+    height: 96px;
+}
+
+.orientation-tile-icon{
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.orientation-tile-inner{
+    justify-content: flex-end;
+}
+
+.orientation-rightarrow{
+    position: absolute;
+    font-size: 6em;
+    top: 5%;
+    right: 5%;
+    color: #00687c;
+    /* text-shadow: -1px 1px white; */
+}
+
+.orientation-rightarrow:hover{
+    color:#009cad;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 55em){
+
+    #orientation-top{
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    #orientation-nav{
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+    .orientation-nav-element{
+        flex-grow: 1;
+        margin: 2%
+    }
+    #orientation-content{
+        padding: 0;
+    }
+    #orientation-background-image{
+        clip-path: polygon(70vmax 0,0 15vmax, 0 0);
+    }
+    #orientation-display{
+        font-size: 1em;
+    }
+}
+@media screen and (max-height: 50em){
+    #orientation-background-image{
+        clip-path: polygon(70vmax 0,0 15vmax, 0 0);
+    }
+}
