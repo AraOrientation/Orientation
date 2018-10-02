@@ -135,7 +135,7 @@
 }
 
 .orientation-rightarrow{
-    position: fixed;
+    position: absolute;
     font-size: 6em;
     top: 5%;
     right: 5%;
