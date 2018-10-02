@@ -137,8 +137,8 @@
 .orientation-rightarrow{
     position: fixed;
     font-size: 6em;
-    top: 10%;
-    right: 10%;
+    top: 5%;
+    right: 5%;
     color: white;
     text-shadow: -1px 1px black;
 }
