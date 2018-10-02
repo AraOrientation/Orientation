@@ -143,6 +143,11 @@
     text-shadow: -1px 1px black;
 }
 
+.orientation-rightarrow:hover{
+    color:#009cad;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 55em){
 
     #orientation-top{
