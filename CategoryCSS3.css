@@ -172,3 +172,8 @@
         font-size: 1em;
     }
 }
+@media screen and (max-height: 50em){
+    #orientation-background-image{
+        clip-path: polygon(70vmax 0,0 15vmax, 0 0);
+    }
+}
