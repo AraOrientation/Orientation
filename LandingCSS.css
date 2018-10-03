@@ -13,4 +13,6 @@
 .orientation-rightarrow{
     font-size: 1em;
     position: relative;
+    top: 0;
+    right: 0;
 }
