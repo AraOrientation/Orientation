@@ -1,0 +1,11 @@
+/* Landing Page */
+
+#orientation-ara-logo{
+    object-fit: contain;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#orientation-top{
+  background-image: radial-gradient(rgba(255,255,255,0.7) 50%,rgba(255,255,255,0.3));
+}
