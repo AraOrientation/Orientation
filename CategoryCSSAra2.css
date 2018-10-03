@@ -171,6 +171,7 @@
     #orientation-top{
         flex-direction: column;
         flex-grow: 1;
+        background-image: linear-gradient(to bottom,white, rgba(255,255,255,0.2),white);
     }
     #orientation-nav{
         flex-wrap: wrap;
@@ -184,15 +185,8 @@
     #orientation-content{
         padding: 0;
     }
-    #orientation-background-image{
-        clip-path: polygon(70vmax 0,0 15vmax, 0 0);
-    }
+
     #orientation-display{
         font-size: 1em;
-    }
-}
-@media screen and (max-height: 50em){
-    #orientation-background-image{
-        clip-path: polygon(70vmax 0,0 15vmax, 0 0);
     }
 }
