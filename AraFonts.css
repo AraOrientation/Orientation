@@ -2,40 +2,40 @@
 
 @font-face {
     font-family: 'Stag Sans Web';
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0006/305358/StagSans-Book-Web.eot?v=0.1.1');
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0006/305358/StagSans-Book-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('') format('woff');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0006/305358/StagSans-Book-Web.eot?v=0.1.1');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0006/305358/StagSans-Book-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('') format('woff');
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
 }
 @font-face {
     font-family: 'Stag Sans Web';
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0019/305362/StagSans-Light-Web.eot?v=0.1.1');
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0019/305362/StagSans-Light-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('http://campus.ara.ac.nz/__data/assets/file/0020/305363/StagSans-Light-Web.woff?v=0.1.1') format('woff');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0019/305362/StagSans-Light-Web.eot?v=0.1.1');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0019/305362/StagSans-Light-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('http://campus.ara.ac.nz/__data/assets/file/0020/305363/StagSans-Light-Web.woff?v=0.1.1') format('woff');
     font-weight: 300;
     font-style: normal;
     font-stretch: normal;
 }
 @font-face {
     font-family: 'Stag Sans Web';
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0005/305366/StagSans-Medium-Web.eot?v=0.1.1');
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0005/305366/StagSans-Medium-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('http://campus.ara.ac.nz/__data/assets/file/0006/305367/StagSans-Medium-Web.woff?v=0.1.1') format('woff');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0005/305366/StagSans-Medium-Web.eot?v=0.1.1');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0005/305366/StagSans-Medium-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('http://campus.ara.ac.nz/__data/assets/file/0006/305367/StagSans-Medium-Web.woff?v=0.1.1') format('woff');
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
 }
 @font-face {
     font-family: 'Stag Web';
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0003/305328/Stag-Book-Web.eot?v=0.1.1');
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0003/305328/Stag-Book-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('http://campus.ara.ac.nz/__data/assets/file/0004/305329/Stag-Book-Web.woff?v=0.1.1') format('woff');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0003/305328/Stag-Book-Web.eot?v=0.1.1');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0003/305328/Stag-Book-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('http://campus.ara.ac.nz/__data/assets/file/0004/305329/Stag-Book-Web.woff?v=0.1.1') format('woff');
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
 }
 @font-face {
     font-family: 'Stag Web';
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0015/305322/Stag-Bold-Web.eot?v=0.1.1');
-    src: url('http://campus.ara.ac.nz/__data/assets/file/0015/305322/Stag-Bold-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('http://campus.ara.ac.nz/__data/assets/file/0016/305323/Stag-Bold-Web.woff?v=0.1.1') format('woff');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0015/305322/Stag-Bold-Web.eot?v=0.1.1');
+    src: url('https://campus.ara.ac.nz/__data/assets/file/0015/305322/Stag-Bold-Web.eot?v=0.1.1#iefix') format('embedded-opentype'), url('http://campus.ara.ac.nz/__data/assets/file/0016/305323/Stag-Bold-Web.woff?v=0.1.1') format('woff');
     font-weight: 700;
     font-style: normal;
     font-stretch: normal;
