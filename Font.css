@@ -6,3 +6,8 @@
     font-style: normal;
     font-stretch: normal;
 }
+
+@font-face{
+    font-family: 'Futura';
+    src: url('https://rawgit.com/AraOrientation/Orientation/blob/master/futura-pt-heavy.otf') format("opentype");
+}
