@@ -169,6 +169,8 @@
 .orientation-arrow:hover{
     color:#009cad;
     cursor: pointer;
+    font-size: 10vmin;
+    margin: 5%;
 }
 
 @media screen and (max-width: 55em){
