@@ -126,7 +126,7 @@
 }
 
 #orientation-links{
-    margin-top: 20px;   
+    margin: 20px 0;   
 }
 
 #orientation-links i{
@@ -182,6 +182,7 @@
     #orientation-top{
         flex-direction: column;
         background-image: linear-gradient(to bottom,white, rgba(255,255,255,0.2),white);
+        justify-content: center;
     }
     #orientation-nav{
         flex-wrap: wrap;
