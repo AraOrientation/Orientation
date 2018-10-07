@@ -6,7 +6,7 @@
     height: 100%;
     color: black;
     background-color: #ffffff;
-    min-height: 60em;
+    min-height: 40em;
     font-family: "Stag Web";
 }
 
@@ -175,7 +175,10 @@
 }
 
 @media screen and (max-width: 55em){
-
+    .orientation-main{
+        min-height: 60em;
+    }
+    
     #orientation-top{
         flex-direction: column;
         background-image: linear-gradient(to bottom,white, rgba(255,255,255,0.2),white);
