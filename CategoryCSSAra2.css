@@ -97,6 +97,7 @@
 }
 
 #orientation-display{
+    margin: 0 5%;
     padding: 2%;
     justify-content: center;
     align-items: center;
