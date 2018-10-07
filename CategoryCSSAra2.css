@@ -44,8 +44,9 @@
 #orientation-content{
     position: relative;
     height: 100%;
-    /* padding: 3em; */
     padding-bottom: 0;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Content div */
