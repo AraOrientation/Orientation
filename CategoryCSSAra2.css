@@ -74,20 +74,20 @@
 }
 
 #orientation-nav img{
-    width: 4vmax;
-    height: 4vmax;
+    width: 8vmin;
+    height: 8vmin;
     margin: 0 auto;
 }
 
 #orientation-nav .selected img{
-    width: 6vmax;
-    height: 6vmax;
+    width: 10vmin;
+    height: 10vmin;
     filter: hue-rotate(111deg);
 }
 
 #orientation-nav img:hover{
-    width: 6vmax;
-    height: 6vmax;
+    width: 10vmin;
+    height: 10vmin;
     cursor: pointer;
 }
 
