@@ -55,6 +55,7 @@
     justify-content: space-evenly;
     padding: 5%;
     background-image: linear-gradient(to right,white, rgba(255,255,255,0.2),white);
+    align-items: center;
 }
 
 /* Navigation div */
