@@ -13,3 +13,7 @@
 a:hover{
   color:#009cad;
 }
+
+.orientation-main{
+    min-height: 40em;
+}
