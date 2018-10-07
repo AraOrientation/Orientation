@@ -17,3 +17,9 @@ a:hover{
 .orientation-main{
     min-height: 40em;
 }
+
+@media screen and (max-width: 55em){
+    #orientation-ara-logo{
+        margin-bottom: 5%;
+    }
+}
