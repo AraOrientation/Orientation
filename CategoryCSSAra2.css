@@ -183,10 +183,12 @@
     #orientation-nav{
         flex-wrap: wrap;
         justify-content: space-between;
+        align-content: space-between;
 
     }
     .orientation-nav-element{
         flex-grow: 1;
+        flex-basis: 33%;
     }
     #orientation-content{
         padding: 0;
