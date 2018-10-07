@@ -51,7 +51,7 @@
 
 /* Content div */
 #orientation-top{
-    flex-grow: 3;
+    flex-grow: 5;
     justify-content: space-evenly;
     padding: 5%;
     background-image: linear-gradient(to right,white, rgba(255,255,255,0.2),white);
@@ -178,7 +178,6 @@
 
     #orientation-top{
         flex-direction: column;
-        flex-grow: 1;
         background-image: linear-gradient(to bottom,white, rgba(255,255,255,0.2),white);
     }
     #orientation-nav{
