@@ -95,12 +95,16 @@
 
 #orientation-display{
     grid-area: 1 / 2 / 2 / 3;
-    
     padding: 2%;
-
     font-size: 1.3em;
     overflow: auto;
     background-color: #bcdcea;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 
