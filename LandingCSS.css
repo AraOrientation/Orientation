@@ -6,10 +6,6 @@
     margin: 0 auto;
 }
 
-#orientation-display{
-    max-width: 27em;
-}
-
 #orientation-top{
   background-image: radial-gradient(rgba(255,255,255,0.7) 50%,rgba(255,255,255,0.3));
 }
@@ -26,4 +22,10 @@ a:hover{
     #orientation-ara-logo{
         margin-bottom: 5%;
     }
+}
+
+@media screen and (min-width: 55em){
+  #orientation-display{
+     max-width: 27em; 
+  }
 }
