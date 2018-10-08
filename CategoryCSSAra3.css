@@ -176,6 +176,12 @@
     cursor: pointer;
 }
 
+.orientation-display-inner{
+    height: 0px;
+}
+
+
+
 @media screen and (max-width: 55em){
     .orientation-main{
         min-height: 55em;
