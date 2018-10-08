@@ -1,3 +1,3 @@
-function test(){
-  window.alert("test")
-}
+$(function() {
+    $("#orientation-nav").slideDown()
+});
