@@ -183,6 +183,10 @@
 
 
 @media screen and (max-width: 55em){
+    .orientation-display-inner{
+        height: auto;
+    }
+   
     .orientation-main{
         min-height: 55em;
     }
@@ -204,6 +208,7 @@
     }
     #orientation-content{
         padding: 0;
+        height: auto;
     }
 
     #orientation-display{
