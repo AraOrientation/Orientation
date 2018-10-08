@@ -90,7 +90,7 @@
     grid-area: 1 / 1 / 2 / 2;
     
     display: flex;
-    flex-diretion: column;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
 }
