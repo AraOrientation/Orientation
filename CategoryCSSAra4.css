@@ -35,12 +35,6 @@
     height: 100%;
 }
 
-#orientation-overlay{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-}
-
 #orientation-content{
     position: relative;
     min-height: 100%;
@@ -53,10 +47,15 @@
 /* Content div */
 #orientation-background{
     background-image: linear-gradient(to right,white, rgba(255,255,255,0.2),white);
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    grid-template-rows: 80% 20%;
 }
 
 /* Navigation div */
 #orientation-nav{
+    grid-area: 1 / 0 / 2 /3;
+    
     justify-content: space-evenly;
     background-color: #363636;
     padding: 1em;
@@ -88,21 +87,22 @@
 }
 
 #orientation-title{
+    grid-area: 0 / 0 / 1 /1;
+    
+    display: flex;
     justify-content: center;
     text-align: center;
 }
 
 #orientation-display{
-    margin: 0 5%;
+    grid-area: 0 / 1 / 1 /2;
+    
     padding: 2%;
-    justify-content: center;
-    align-items: center;
+
     font-size: 1.3em;
     overflow: auto;
     background-color: #bcdcea;
-    /* height: 5px; */
-    /* flex-shrink: 1; */
-    max-width: 50%;
+
 }
 
 /*Background div */
@@ -163,9 +163,7 @@
 }
 
 .orientation-arrows{
-    position: absolute;
-    top: 3%;
-    right: 5%;
+    grid-area: 0 / 2 / 1 /3;
 }
 
 
