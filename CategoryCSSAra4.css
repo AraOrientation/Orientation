@@ -164,6 +164,7 @@
 .orientation-arrows{
     grid-area: 1 / 3 / 2 / 4;
     align-items: flex-start;
+    justify-content: center;
 }
 
 
