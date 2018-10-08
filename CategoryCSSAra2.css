@@ -47,6 +47,7 @@
     padding-bottom: 0;
     background-position: center;
     background-size: cover;
+    overflow: hidden;
 }
 
 /* Content div */
@@ -54,7 +55,6 @@
     flex-grow: 5;
     justify-content: space-evenly;
     background-image: linear-gradient(to right,white, rgba(255,255,255,0.2),white);
-    align-items: center;
 }
 
 /* Navigation div */
