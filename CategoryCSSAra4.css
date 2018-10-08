@@ -194,11 +194,13 @@
     
     #orientation-background{
         background-image: linear-gradient(to bottom,white, rgba(255,255,255,0.2),white);
-        grid-template-columns: 80% 20%;
-        grid-template-rows: 25% auto auto;
+        grid-template-columns: 100%;
+        grid-template-rows: 30% auto 30%;
     }
     .orientation-arrows{
-        grid-area: 1 / 2 / 2 / 3;
+        position: fixed;
+        right: 5%;
+        top: 5%;
     }
     
     #orientation-nav{
