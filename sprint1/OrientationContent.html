@@ -1,0 +1,138 @@
+<div class="orientation-main">
+    
+    <div id="orientation-content" style="display: none; background-image: url('{{page.model.data.properties.backImage}}')">
+        <div id="orientation-background">   
+            <div id="orientation-title">
+                <h1>{{ page.model.data.properties.heading ? page.model.data.properties.heading : page.getTitle()}}</h1>
+                <div class="orientation-arrows flex-container">
+                    <div class="fa fa-angle-double-left orientation-arrow" onclick="previous()"></div>
+                    <div class="fa fa-angle-double-right orientation-arrow" onclick="next()"></div>
+                </div>
+            </div>
+            <div id="orientation-display" >
+                <div id="orientation-display-fixed-width">
+                    <div id="tab1" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content1"></div>
+                    <div id="tab2" ng-if="page.properties.content2" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content2"></div>
+                    <div id="tab3" ng-if="page.properties.content3" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content3"></div>
+                    <div id="tab4" ng-if="page.properties.content4" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content4"></div>
+                    <div id="tab5" ng-if="page.properties.content5" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content5"></div>
+                </div>
+            </div>
+        
+            <div id="orientation-nav" class="flex-container" style="display:none">
+                
+                <div class="orientation-nav-element selected" onclick="changeTab(event,'tab1')">
+                    <div ng-class="page.properties.icon1 ? page.properties.icon1.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                    <p>{{page.properties.heading1}}</p>
+                </div>
+                <div ng-if="page.model.data.properties.content2" class="orientation-nav-element" onclick="changeTab(event,'tab2')">
+                    <div ng-class="page.properties.icon2 ? page.properties.icon2.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                    <p>{{page.model.data.properties.heading2}}</p>
+                </div>
+                <div ng-if="page.model.data.properties.content3" class="orientation-nav-element" onclick="changeTab(event,'tab3')">
+                    <div ng-class="page.properties.icon3 ? page.properties.icon3.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                    <p>{{page.model.data.properties.heading3}}</p>
+                </div>
+                <div ng-if="page.model.data.properties.content4" class="orientation-nav-element" onclick="changeTab(event,'tab4')">
+                    <div ng-class="page.properties.icon4 ? page.properties.icon4.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                    <p>{{page.model.data.properties.heading4}}</p>
+                </div>
+                <div ng-if="page.model.data.properties.content5" class="orientation-nav-element" onclick="changeTab(event,'tab5')">
+                    <div ng-class="page.properties.icon5 ? page.properties.icon5.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                    <p>{{page.model.data.properties.heading5}}</p>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div> 
+</div>
+<div id="orientation-help-overlay">
+        <div id="orientation-help-category" class="orientation-help-dialouge">
+            <p>Click these arrows to go to<br> the previous or next Category!</p>
+        </div>
+        <div id="orientation-help-content" class="orientation-help-dialouge">
+            <p>Content will appear here!</p>
+        </div>
+        <div id="orientation-help-navigation" class="orientation-help-dialouge">
+            <p>Click these to switch between different content!</p>
+        </div>
+        <div id="orientation-help-close" onclick="hideHelp()">
+            <p>Got it, Thanks!</p>
+        </div>
+    </div>
+<script>
+
+let pages = ["orientation","orientation/myday","orientation/your-campus-madras","orientation/student-id-card","orientation/study","orientation/campus-services","orientation/additional-services","orientation/student","orientation/end"];
+let currentPage = parseInt(localStorage.getItem('page'));
+let con = angular.element(document.getElementById("myday")).controller()
+let firstTime = localStorage.getItem('firstTime');
+
+$(function() {
+    if(firstTime == "true"){
+        $("#orientation-content").delay(100).fadeIn("fast");
+        $("#orientation-nav").delay(400).slideDown();
+        $("#orientation-help-overlay").delay(400).fadeIn("fast");
+        localStorage.setItem('firstTime',"false");
+    } else {
+        $('#orientation-nav').show();
+        $("#orientation-content").show();
+    }
+    
+    $( window ).unload(function() {
+        $("#orientation.content").fadeOut("fast");
+    });
+    document.getElementById("tab1").style.display = "block";
+});
+
+
+if(currentPage == undefined){
+    currentPage = undefined//page.properties.pageNum;
+    if(currentPage == undefined){
+        currentPage = 0;
+    }
+}
+
+if(currentPage < 0){
+    currentPage = 0;
+} else if(currentPage > pages.length-1){
+    curentPage = pages.length -1;
+}
+
+
+localStorage.setItem('page',currentPage)
+
+
+function next(){
+    localStorage.setItem('page',currentPage+1);
+    con.state.go('.',{path:pages[currentPage+1]})
+}
+
+function previous(){
+    localStorage.setItem('page',currentPage-1);
+    con.state.go('.',{path:pages[currentPage-1]})
+}
+
+function hideHelp(){
+    $("#orientation-help-overlay").fadeOut("fast");
+}
+
+//Now works with IE!
+function changeTab(evt, tabName){
+    let tabs = $(".orientation-tab-content");
+    let navs = $(".orientation-nav-element");
+
+    for(i= 0; i < tabs.length; i++){
+        tabs[i].style.display = "none";
+    }
+
+    for(i= 0; i < navs.length; i++){
+        navs[i].className = navs[i].className.replace(" selected", "");
+    }
+
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " selected";
+}
+
+</script>
