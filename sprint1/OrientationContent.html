@@ -159,7 +159,7 @@ function changeTab(){
     document.getElementById("tab"+currentTab).style.display = "block";
     let element = $('#orientation-nav').children()[currentTab-1]
     element.children[0].className += " selected";
-    if(document.activeElement.className.includes("orientation-btn")){
+    if(document.activeElement.className.indexOf("orientation-btn") !== -1){
         element.focus();
     }
     
@@ -215,7 +215,7 @@ function drawTiles(){
             let el = all[i];
             if(el.title == "tile"){
                 let tileName = el.innerText;
-                let tile = con.dashboard.tiles.find( (tile) => {return (tile.title == el.innerText || tile.appId == el.innerText)});
+                let tile = con.dashboard.tiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText)})[0];
                 
                 if(tile !== undefined){
                     
