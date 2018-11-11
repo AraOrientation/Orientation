@@ -44,9 +44,12 @@
     background-color: #ffffff;
     font-family: "Stag Sans Web";
     /* overflow-y: auto; */
+    display: -ms-grid;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 1fr auto;
+    -ms-grid-rows: 1fr auto;
+    -ms-grid-columns: 100%;
 }
 
 #orientation-main h1{
@@ -76,6 +79,8 @@
     background-size: cover;
     background-attachment: fixed;
     grid-area: 1;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
 }
 
 /* Content div */
@@ -97,8 +102,6 @@
 #orientation-nav{
     -ms-grid-row: 2;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
-    /* grid-area: 2 / 1 / 3 / 4; */
     justify-content: space-evenly;
     background-color: #363636;
     padding: 1em;
@@ -150,6 +153,7 @@
     align-items: center;
     padding-top: 10%;
     overflow: auto;
+    text-shadow: -1px -1px 20px #ffffff87, 1px -1px 20px #ffffff87, -1px 1px 20px #ffffff87, 1px 1px 20px #ffffff87;
 }
 
 #orientation-display{
@@ -338,10 +342,6 @@
     #orientation-nav { 
         justify-content: space-between; 
     } 
-    /* Edge cant display clip-path so we will just fill the background of display */
-    #orientation-angled-backdrop{
-        display: none;
-    }
     
     #orientation-display{
         background-color: rgba(80,172,200,1);
@@ -354,10 +354,6 @@
     #orientation-nav { 
         justify-content: space-between; 
     } 
-
-    #orientation-angled-backdrop{
-        display: none;
-    }
     
     #orientation-display{
         background-color: rgba(80,172,200,1);
@@ -431,7 +427,6 @@
         -ms-grid-row: 2;
         -ms-grid-column: 1;
         max-width: none;
-        padding-top: 3%;
         background-color: rgba(80,172,200,1);
         overflow: initial;
         position: relative;
@@ -452,14 +447,6 @@
         overflow: unset;
     }
 
-    #orientation-angled-backdrop{
-        grid-area: 2 /1 / 3 / 2;
-        -ms-grid-row: 1;
-        -ms-grid-column: 1;
-        -ms-grid-row-span: 2;
-        clip-path: polygon( calc( -100vw * 0.1) 100%, 100% 0, 100% 110%, 0 110%);
-    }
-
     .orientation-nav-img{
         font-size: 3em;
     }
@@ -477,7 +464,7 @@
     
     #orientation-help-content{
         left: 50%;
-        top: 30%;
+        top: 20%;
         transform: translate(-50%,0);
     }
     
@@ -501,5 +488,6 @@
     .orientation-tile{
         margin: 0 auto;
     }
+    
 }
 
