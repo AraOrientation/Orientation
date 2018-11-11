@@ -1,0 +1,56 @@
+<div class="orientation-landing-main">
+        
+    <div id="orientation-landing-content" class="flex-container flex-container-columns" style="display: none; background-image: url('{{ page.model.data.properties.backImage }}')">
+        
+        <div id="orientation-landing-top" class="flex-container">
+            
+            <div id="orientation-landing-title" class="flex-container flex-container-columns">
+                <img id="orientation-landing-ara-logo" src="https://mydayeu.blob.core.windows.net/ef475ff3-7cd1-4fa3-ba77-f63824f7c37c/pages/images/9095-image-1.png">
+            </div>
+            
+            <div id="orientation-angled-backdrop"></div>
+            
+            <div id="orientation-landing-sidebar" class="flex-container flex-container-columns">
+                <h1>Kia Kaha</h1>
+                <h2>Welcome to Ara <br>{{myday.user.name ? myday.user.name : myday.user.uname}}!</h2>
+                <br>
+                    <a id="{{page.properties.nextPage}}" ng-click="" href="" onclick="nextPage(this.id)" class="orientation-landing-btn"><h2 class="orientation-landing-btn-inner" tabindex="-1">Begin your journey <wbr>here <div class="fa fa-arrow-right orientation-rightarrow"></div> </h2></a>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<script>
+$(function(){
+    //Set initial focus for accessability
+    $("#myday-content").focus();
+    
+    $("#orientation-landing-content").delay(100).fadeIn("slow");
+    $( window ).unload(function() {
+        $("#orientation-landing-content").fadeOut("fast");
+    });
+})
+
+if(localStorage.getItem('firstTime') === null){
+    localStorage.setItem('firstTime',"true");
+}
+
+localStorage.setItem('fromLanding',"true")
+
+let con = angular.element(document.getElementById("myday")).controller();
+
+function nextPage(pagePath){
+    con.state.go('.',{path:pagePath})
+}
+
+//Keys for accessability
+$(document).keydown(function(e) {
+
+    if(e.which == 13) {
+        document.activeElement.click();
+    }
+})
+</script>
