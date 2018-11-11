@@ -1,0 +1,239 @@
+/*Custom StyleSheet for Orientation Template*/
+
+@font-face {
+    font-family: 'Stag Web';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/Stag-Book-Web.eot');
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/Stag-Book-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face{
+    font-family: 'Futura';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/futura-pt-heavy.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Stag Sans Web';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/StagSans-Light-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+
+.orientation-landing-main {
+    color: white;
+    background-color: #ffffff;
+    min-height: 30em;
+    font-family: "Stag Web";
+    width: 100%;
+}
+
+#orientation-landing-content{
+    height: 100%;
+    background-size: cover;
+}
+
+#orientation-landing-top {
+    background-image: linear-gradient(to right,rgba(255,255,255,1) 10%,rgba(255,255,255,0.3));
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 100%;
+    -ms-grid-columns: 0.1fr 30% 0.2fr 0.3fr 40em 0.4fr;
+    grid-template-columns: 0.1fr 30% 0.2fr 0.3fr 40em 0.4fr;
+    grid-template-rows: 100%;
+    overflow: hidden;
+}
+
+#orientation-landing-ara-logo {
+    object-fit: contain;
+    max-height: 60vh;
+    padding-bottom: 20vh;
+}
+
+#orientation-landing-title{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: 1 / 2 / 2 / 3;
+    z-index: 1;
+    justify-content: center;
+}
+
+#orientation-landing-sidebar {
+    margin: 0 5%;
+    padding: 2%;
+    justify-content: center;
+    align-items: center;
+    -ms-grid-row: 1;
+    -ms-grid-column: 5;
+    grid-area: 1 / 5 / 2 / 6;
+    z-index: 1;
+    position: relative;
+    max-width: 40em;
+}
+
+#orientation-landing-sidebar h1{
+    font-size: 7em;
+}
+
+#orientation-landing-sidebar h2{
+    text-align: center;
+}
+
+#orientation-landing-sidebar a{
+    color: #0c5876;
+}
+
+#orientation-landing-sidebar a:hover{
+    color: #00687c;
+}
+
+.orientation-landing-btn:focus,.orientation-landing-btn-inner:focus{
+    outline: none;
+}
+
+.orientation-landing-btn-inner{
+    margin: 0;
+}
+.orientation-landing-btn{
+    margin: 10px;
+}
+
+.orientation-landing-btn:focus > .orientation-landing-btn-inner{
+    outline: 2px solid #82ca9f;
+}
+
+#orientation-landing-smaller h2{
+    font-size: 1.8em;
+}
+
+/* Content div */
+#orientation-angled-backdrop{
+    background-color: rgba(80,172,200,1);
+    transform: skewX(-30deg);
+    grid-area: 1 / 4 / 2 / 6;
+    width: 100vw;
+    -ms-grid-column: 4;
+    -ms-grid-row: 1;
+    -ms-grid-column-span: 2;
+}
+
+/* Edge */
+@supports (-ms-ime-align:auto) { 
+
+    /* Edge cant display clip-path so we will just fill the background of display */
+    #orientation-angled-backdrop{
+        /* display: none; */
+    }
+    
+    #orientation-landing-sidebar{
+        /* background-color: rgba(80,172,200,1); */
+    }
+    
+    
+}
+
+/* IE 10 & 11 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+    #orientation-angled-backdrop{
+        /* display: none; */
+    }
+    
+    #orientation-landing-sidebar{
+        /* background-color: rgba(80,172,200,1); */
+    }
+    
+    #orientation-landing-title{
+        display: inline-block;
+    }
+    
+    #orientation-landing-ara-logo{
+        padding: 0;
+        height: 50%;
+        display: block;
+        margin: 0 auto;
+        margin-top: 30%;
+    }
+}
+
+
+/* Mobile */
+@media screen and (max-width: 70em){
+    
+    #orientation-landing-content{
+        background-attachment: fixed;
+    }
+    
+    #orientation-landing-sidebar h1{
+        font-size: 4em;
+    }
+    
+    #orientation-landing-sidebar h2{
+        font-size: 2em;
+    }
+    
+    #orientation-landing-smaller h2{
+        font-size: 1.5em;
+    }
+
+    
+    #orientation-landing-top {
+        background-image: linear-gradient(to bottom,rgba(255,255,255,1) 10%,rgba(255,255,255,0.3));
+        display: -ms-grid;
+        display: grid;
+        -ms-grid-rows: 10vh 30vh 10vh auto;
+        -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+        grid-template-rows: 10vh 30vh 10vh auto;
+        overflow: unset;
+    }
+    
+    #orientation-angled-backdrop{
+        grid-area: 3 /1 / 4 / 2;
+        -ms-grid-row: 1;
+        -ms-grid-column: 1;
+        -ms-grid-row-span: 2;
+        transform: unset;
+        clip-path: polygon( calc( -100vw * 0.1) 100%, 100% 0, 100% 110%, 0 110%);
+        width: 100%;
+    }
+    
+    #orientation-landing-title{
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        grid-area: 2 / 1 / 3 / 2;
+        z-index: 1;
+        justify-content: center;
+    }
+    
+    #orientation-landing-sidebar {
+        margin: 0;
+        padding: 2%;
+        justify-content: center;
+        align-items: center;
+        -ms-grid-row: 4;
+        -ms-grid-column: 1;
+        grid-area: 4 / 1 / 5 / 2;
+        z-index: 1;
+        max-width: none;
+        background-color: rgba(80,172,200,1)
+    }
+    
+    #orientation-landing-ara-logo {
+        object-fit: contain;
+        max-height: 30vh;
+        padding-bottom: 5vh;
+    }
+    
+    .orientation-landing-main {
+        min-height: 40em;
+    }
+    
+    .orientation-landing-btn h2{
+        white-space: nowrap;
+    }
+}
+
