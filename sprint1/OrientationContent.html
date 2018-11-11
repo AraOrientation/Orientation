@@ -91,6 +91,7 @@ let path = con.state.params.path;
 //Variables
 let currentPage = pages.indexOf(path.slice(11,path.length));
 let firstTime = localStorage.getItem('firstTime');
+let fromLanding = localStorage.getItem('fromLanding')
 let currentTab = 1;
 
 //On page Load function
@@ -100,14 +101,21 @@ $(function() {
     
     //Should we show the help overlay?
     if(firstTime == "true"){
-        $("#orientation-content").delay(100).fadeIn("fast");
-        $("#orientation-nav").delay(400).slideDown();
         $("#orientation-help-overlay").delay(400).fadeIn("fast");
         localStorage.setItem('firstTime',"false");
+    } 
+    
+    if(fromLanding == "true"){
+        //$("#orientation-content").delay(100).fadeIn("fast");
+        $("#orientation-content").show();
+        $("#orientation-nav").delay(400).slideDown();
+        localStorage.setItem('fromLanding',"false");
     } else {
         $('#orientation-nav').show();
         $("#orientation-content").show();
     }
+    
+    
     
     //On page end functin
     $( window ).unload(function() {
@@ -216,6 +224,11 @@ function drawTiles(){
             if(el.title == "tile"){
                 let tileName = el.innerText;
                 let tile = con.dashboard.tiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText)})[0];
+                
+                //check if the user hid the tile
+                if(tile == undefined){
+                    tile = con.dashboard.hiddenTiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText)})[0];
+                }
                 
                 if(tile !== undefined){
                     
