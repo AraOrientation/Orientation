@@ -54,7 +54,7 @@
 
 #orientation-main h1{
     font-size: 6em;
-    color: #00687c;
+    color: #0c5876;
     font-family: "Stag Web";
     margin-bottom: 0;
     text-align: center;
@@ -175,11 +175,11 @@
 }
 
 #orientation-display a {
-    color: black;
+    color: white;
 }
 
 #orientation-display a:hover{
-    color: #82ca9f
+    color: #363636;
 }
 
 #orientation-display img{
@@ -249,7 +249,7 @@
 }
 
 .orientation-arrow{
-    color: #00687c;
+    color: #0c5876;
     font-size: 6em;
 }
 
@@ -262,12 +262,12 @@
 }
 
 .orientation-arrow-btn:focus > .orientation-arrow{
-    outline: 2px solid #009cad;
+    outline: 2px solid rgb(79, 108, 150);
 }
 
 
 .orientation-arrow:hover{
-    color:#009cad;
+    color:rgb(79, 108, 150);
     cursor: pointer;
 }
 
