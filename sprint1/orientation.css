@@ -119,7 +119,7 @@
 .orientation-nav-img{
     font-size: 5em;
     margin: 0 auto;
-    color: rgba(80,172,200,1);
+    color: white;
 }
 
 .orientation-btn:focus,.orientation-nav-element:focus{
@@ -127,20 +127,20 @@
 }
 
 .orientation-btn:focus > .orientation-nav-element{
-    outline: 2px solid #82ca9f;
+    outline: 2px solid rgb(79, 108, 150);
 }
 
 .orientation-nav-element:hover > .orientation-nav-img{
-    color: #82ca9f;
+    color: rgb(79, 108, 150);
 }
 
 .orientation-nav-element:hover{
     cursor: pointer;
-    color: #82ca9f;
+    color: rgb(79, 108, 150);
 }
 
 .selected > .orientation-nav-img{
-    color: #82ca9f;
+    color: rgb(79, 108, 150);
 }
 
 #orientation-title{
@@ -160,7 +160,7 @@
     -ms-grid-row: 1;
     -ms-grid-column: 2;
     grid-area: 1 / 2 / 2 / 3;
-    font-size: 1.2em;
+    font-size: 1.3em;
     overflow: auto;
     position: absolute;
     height: 100%;
@@ -170,7 +170,8 @@
     color: white;
     font-kerning: none;
     line-height: 1.3em;
-    background-color: rgba(80,172,200,1);
+    /*background-color: rgba(80,172,200,1);*/
+    background-color: rgb(79, 108, 150);
 }
 
 #orientation-display a {
@@ -183,12 +184,10 @@
 
 #orientation-display img{
     width: unset;
+    border-radius: 5%;
+    border: 1px solid white;
 }
 
-#orientation-display-fixed-width{
-    max-width: 35em;
-    margin: 5vh 5vw;
-}
 
 #orientation-display h1, #orientation-display h2, #orientation-display h3, #orientation-display h4, #orientation-display h5{
     margin: 0;
@@ -277,12 +276,21 @@
 }
 
 .orientation-tab-content{
-    display: none;
+    max-width: 35em;
+    margin: 5vh 5vw;
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+}
+
+.orientation-tab-content.selected{
+    top: 0;
+    left: 0;
+    position: relative;
 }
 
 
 /* Orientation Help */
-
 #orientation-help-overlay{
     position: absolute;
     width: 100%;
@@ -423,11 +431,10 @@
 
     #orientation-display{
         grid-area: 2 / 1 / 3 / 2;
-        font-size: 1em;
+        font-size: 1.1em;
         -ms-grid-row: 2;
         -ms-grid-column: 1;
         max-width: none;
-        background-color: rgba(80,172,200,1);
         overflow: initial;
         position: relative;
         padding-bottom: 10em;
