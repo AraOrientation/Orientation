@@ -1,0 +1,381 @@
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-noir.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/css/tooltipster.bundle.min.css">
+
+
+<div id="orientation-main">
+    
+    <div id="orientation-content" style="display: none; background-image: url('{{page.model.data.properties.backImage}}')">
+        <div id="orientation-background">   
+            <div id="orientation-title">
+                <h1>{{ page.model.data.properties.heading ? page.model.data.properties.heading : page.getTitle()}}</h1>
+                <div class="orientation-arrows flex-container orientation-tooltip" title="Click these arrows to go to the previous or next Category!">
+                    <div class="orientation-arrow-btn" ng-click="" onclick="previous()">
+                        <span tabindex="-1" class="fa fa-angle-double-left orientation-arrow"></span>
+                    </div>
+                    <div class="orientation-arrow-btn" ng-click="" onclick="next()">
+                        <span tabindex="-1" class="fa fa-angle-double-right orientation-arrow"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="orientation-display" class="orientation-tooltip" title="Content will be displayed here!">
+                <div id="tab1" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content1"></div>
+                <div id="tab2" ng-if="page.properties.content2" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content2"></div>
+                <div id="tab3" ng-if="page.properties.content3" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content3"></div>
+                <div id="tab4" ng-if="page.properties.content4" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content4"></div>
+                <div id="tab5" ng-if="page.properties.content5" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content5"></div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    <div id="orientation-nav" class="flex-container orientation-tooltip" style="display:none" title="Click these to switch between different content!">
+        <div class="orientation-btn" ng-click="" onclick="updateTab('tab1')">
+            <span class="orientation-nav-element selected" tabindex="-1">
+                <div ng-class="page.properties.icon1 ? page.properties.icon1.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                <p>{{page.properties.heading1}}</p>
+            </span>
+        </div>
+        <div ng-if="page.model.data.properties.content2" class="orientation-btn" ng-click="" onclick="updateTab('tab2')">
+            <span class="orientation-nav-element" tabindex="-1">
+                <div ng-class="page.properties.icon2 ? page.properties.icon2.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                <p>{{page.model.data.properties.heading2}}</p>
+            </span>
+        </div>
+        <div ng-if="page.model.data.properties.content3" class="orientation-btn" ng-click="" onclick="updateTab('tab3')">
+            <span class="orientation-nav-element" tabindex="-1">
+                <div ng-class="page.properties.icon3 ? page.properties.icon3.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                <p>{{page.model.data.properties.heading3}}</p>
+            </span>
+        </div>
+        <div ng-if="page.model.data.properties.content4" class="orientation-btn" ng-click="" onclick="updateTab('tab4')">
+            <span class="orientation-nav-element" tabindex="-1">
+                <div ng-class="page.properties.icon4 ? page.properties.icon4.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                <p>{{page.model.data.properties.heading4}}</p>
+            </span>
+        </div>
+        <div ng-if="page.model.data.properties.content5" class="orientation-btn" ng-click="" onclick="updateTab('tab5')">
+            <span class="orientation-nav-element" tabindex="-1">
+                <div ng-class="page.properties.icon5 ? page.properties.icon5.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
+                <p>{{page.model.data.properties.heading5}}</p>
+            </span>
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<div id="orientation-image-modal">
+    <img id="orientation-modal-image">
+</div>
+    
+    <style>
+        @keyframes shadow-pulse
+        {
+             0% {
+                  box-shadow: 0 0 0 0px rgba(255, 255, 255, 1);
+             }
+             100% {
+                  box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+             }
+        }
+        
+        .tooltipster-box{
+            animation: shadow-pulse 1s infinite;
+        }
+    </style>
+    
+<script>
+
+//Determines Page Order
+let pages = ["","/myday","/your-campus-madras","/student-id-card","/digital-tools","/study","/campus-services","/additional-services","/student","/end"];
+
+//Angular Controller for pulling data
+let con = angular.element(document.getElementById("myday")).controller()
+let path = con.state.params.path;
+
+//Variables
+let currentPage = pages.indexOf(path.slice(11,path.length));
+let firstTime = localStorage.getItem('firstTime');
+let fromLanding = localStorage.getItem('fromLanding')
+let currentTab = 1;
+
+//Should we show the help overlay?
+if(firstTime == "true"){
+    localStorage.setItem('firstTime',"false");
+    
+    jQuery.getScript("https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/js/tooltipster.bundle.min.js")
+    .done(function(){
+        $('.orientation-tooltip').tooltipster({theme: 'tooltipster-noir', repositionOnScroll: true, trackOrigin: true, trigger: 'custom', animationDuration: 500, triggerClose: {click:true}});
+    
+        $("#orientation-nav").tooltipster('open');
+        $(".orientation-arrows").tooltipster('open');
+        $("#orientation-display").tooltipster('open');
+    });
+    
+} 
+
+
+//On page Load function
+$(function() {
+
+    //Set initial focus for accessability
+    $("#myday-content").focus();
+    
+    
+    if(fromLanding == "true"){
+        //$("#orientation-content").delay(100).fadeIn("fast");
+        $("#orientation-content").show();
+        $("#orientation-nav").delay(400).slideDown();
+        localStorage.setItem('fromLanding',"false");
+    } else {
+        $('#orientation-nav').show();
+        $("#orientation-content").show();
+    }
+    
+    
+    //On page end functin
+    $( window ).unload(function() {
+        $("#orientation.content").fadeOut("fast");
+    });
+    
+    
+    //Show the first tab
+    updateTab('tab1')
+    
+    //Draw any tiles in the content - needs to be run with a delay
+    setTimeout(drawTiles,100);
+    setTimeout(drawTiles,1000); //backup incase angular is running slow
+    
+    setTimeout(addImages,100);
+
+    
+});
+
+
+//If we dont know what page we are on go back to the start
+if(currentPage < 0){
+    go("orientation"+pages[0]);
+} 
+
+//Go to the next page
+function next(){
+    go("orientation"+pages[currentPage+1]);
+}
+
+//Go to the previous page
+function previous(){
+    go("orientation"+pages[currentPage-1]);
+}
+
+//Angular routing; change the path 
+function go(path){
+    con.state.go('.',{path:path})
+}
+
+//Hide the help overlay
+function hideHelp(){
+    $("#orientation-help-overlay").fadeOut("fast");
+}
+
+//User clicked a tab button
+function updateTab(tabName){
+    clearTabs();
+    currentTab = parseInt(tabName.slice(3));
+    changeTab();
+}
+
+function blur(evt){
+    console.log("lost focus "+evt)
+}
+
+function focus(evt){
+    console.log("got focus "+evt)
+}
+
+//Change Tabs
+function changeTab(){
+    document.getElementById("tab"+currentTab).className += " selected";
+    let element = $('#orientation-nav').children()[currentTab-1]
+    element.children[0].className += " selected";
+    if(document.activeElement.className.indexOf("orientation-btn") !== -1){
+        element.focus();
+    }
+    
+    //scroll to the top
+    document.getElementById("orientation-main").scrollTop = 0
+    document.getElementById("orientation-display").scrollTop = 0
+    
+    //draw any tiles on this tab
+    drawTiles();
+}
+
+//Clears the current tab
+function clearTabs(){
+    let tabs = $(".orientation-tab-content");
+    let navs = $(".orientation-nav-element");
+
+    for(i= 0; i < tabs.length; i++){
+        tabs[i].className = tabs[i].className.replace(" selected", "");
+    }
+
+    for(i= 0; i < navs.length; i++){
+        navs[i].className = navs[i].className.replace(" selected", "");
+    }
+}
+
+//Keys for accessability
+$(document).keydown(function(e) {
+
+    if(e.which == 13) {
+        document.activeElement.click();
+        
+    } else if(e.which == 37){
+        if(currentTab > 1 ){
+            currentTab -=1;
+            clearTabs();
+            changeTab();
+        }
+        
+    } else if(e.which == 39){
+        if(currentTab < $(".orientation-nav-element").length){
+            currentTab +=1;
+            clearTabs();
+            changeTab();
+        }
+    }
+});
+
+//Draw a tile from the dashboard, i.e <abbr tite='title'>Calendar</abbr> Will become the Calendar tile
+function drawTiles(){
+    let all = document.getElementsByTagName("abbr");
+    if(all.length != 0){
+        for(i = 0; i < all.length; i++){
+            let el = all[i];
+            if(el.title == "tile"){
+                let tileName = el.innerText;
+                let tile = con.dashboard.tiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText)})[0];
+                
+                //check if the user hid the tile
+                if(tile == undefined){
+                    tile = con.dashboard.hiddenTiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText)})[0];
+                }
+                
+                if(tile !== undefined){
+                    
+                    let div = document.createElement("div");
+                    div.style.backgroundColor = "rgb("+tile.backgroundColor[0]+","+tile.backgroundColor[1]+","+tile.backgroundColor[2]+")";
+                    div.className = "tile orientation-tile";
+                    
+                    let divInner = document.createElement("div");
+                    divInner.className = "tile-inner orientation-tile-inner"
+                    div.appendChild(divInner);
+                    
+                    if(con.dashboard.gradient){
+                        divInner.style.backgroundImage = "linear-gradient(to right,rgba(0,0,0,.3),rgba(255,255,255,.3))";
+                    }
+                    if(con.dashboard.tileFlip){
+                        divInner.style.justifyContent = "flex-end";
+                    }
+                    if(con.layout.tileBorder){
+                        divInner.style.boxShadow = "inset 0 0 0 1px rgba(255,255,255,1)";
+                    }
+                    
+                    let header = document.createElement("header")
+                    divInner.appendChild(header);
+                    
+                    let h2 = document.createElement("h2");
+                    let text = document.createTextNode(tile.title);
+                    h2.appendChild(text);
+                    header.appendChild(h2);
+                    
+                    let i = document.createElement("i");
+                    i.className = "orientation-tile-icon "+tile.icon;
+                    header.appendChild(i);
+                    
+                    el.parentNode.replaceChild(div,el)
+                    
+                } else {
+                    //if we want to remove the arr anyway
+                }
+            }
+        }
+    }
+}
+
+//Image Modal
+
+let x = 0, currentX = 0 , y = 0, currentY = 0, scale = 1, currentScale = 1;
+let displayImage = document.getElementById("orientation-modal-image");
+displayImage.draggable = false;
+
+function updateImage(x,y,scale){
+    const transform = 'translateX(' + x + 'px) translateY(' + y + 'px) translateZ(0px) scale(' + scale + ',' + scale + ')';
+    displayImage.style.transform = transform;
+    displayImage.style.WebkitTransform = transform;
+    displayImage.style.msTransform = transform;
+}
+
+function resetImage(){
+    x = 0, currentX = 0,  y = 0, currentY = 0, scale = 1, currentScale = 1, maxDistX = 0, maxDistY = 0;
+    updateImage(x,y,scale);
+}
+
+function updatePos(){
+    maxDistX = Math.abs(window.innerWidth/2 - (displayImage.width/2)*currentScale) + window.innerWidth*0.10;
+    maxDistY = Math.abs(window.innerHeight/2 - (displayImage.height/2)*currentScale) + window.innerHeight*0.10;
+}
+
+jQuery.getScript("https://hammerjs.github.io/dist/hammer.min.js").done(function(){
+    var hammertime = new Hammer(document.getElementById("orientation-image-modal"));
+    hammertime.get('pinch').set({ enable: true });
+    hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+    updatePos()
+    
+    hammertime.on('pinch pinchmove', function(ev){
+        currentScale = Math.min(Math.max(0.5,ev.scale*scale),4);
+        updatePos()
+        currentX = Math.min(maxDistX,Math.max(maxDistX*-1,x+ev.deltaX));
+        currentY = Math.min(maxDistY,Math.max(maxDistY*-1,y+ev.deltaY));
+        
+        updateImage(currentX,currentY,currentScale);
+    });
+    
+    hammertime.on('pan', function(ev){
+        updatePos()
+        currentX = Math.min(maxDistX,Math.max(maxDistX*-1,x+ev.deltaX));
+        currentY = Math.min(maxDistY,Math.max(maxDistY*-1,y+ev.deltaY));
+        
+        updateImage(currentX,currentY,scale);
+    })
+    
+    hammertime.on('panend pancancel pinchend pinchcancel', function(){
+        scale = currentScale;
+        x = currentX;
+        y = currentY;
+    });  
+    
+});
+
+function addImages(){
+    //add onclick to images
+    $("img").each(function(i){
+       this.onclick = openModal;
+    })
+    $("#orientation-image-modal").click(function(){closeModal()});
+}
+
+function openModal(img){
+    resetImage();
+    $("#orientation-modal-image").attr('src', img.target.src)
+    $("#orientation-image-modal").css('display', 'flex');
+}
+
+function closeModal(){
+    $("#orientation-image-modal").hide();
+}
+
+</script>
