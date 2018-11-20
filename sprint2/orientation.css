@@ -1,0 +1,436 @@
+/*Custom StyleSheet for Orientation Template*/
+
+@font-face {
+    font-family: 'Stag Web';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/Stag-Book-Web.eot');
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/Stag-Book-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face{
+    font-family: 'Futura';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/futura-pt-heavy.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Stag Sans Web';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/StagSans-Light-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+#orientation-nav::-webkit-scrollbar{
+    height: 10px;
+}
+
+#orientation-nav::-webkit-scrollbar-track{
+    background-color: rgba(255,255,255,.4);
+}
+
+#orientation-nav::-webkit-scrollbar-thumb{
+    background-color: rgba(255,255,255,.2);
+}
+#orientation-nav::-webkit-scrollbar-thumb:hover{
+    background-color: rgba(188,220,234,.5);
+}
+/* Container Div */
+#orientation-main{
+    width: 100%;
+    height: 100%;
+    color: black;
+    background-color: #ffffff;
+    font-family: "Stag Sans Web";
+    /* overflow-y: auto; */
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto;
+    -ms-grid-rows: 1fr auto;
+    -ms-grid-columns: 100%;
+}
+
+#orientation-main h1{
+    font-size: 6em;
+    color: rgb(0, 106, 124);
+    font-family: "Stag Web";
+    margin-bottom: 0;
+    text-align: center;
+}
+
+#orientation-title h2{
+    font-size: 1.5em;
+    color: black;
+    margin: 0;
+}
+
+.orientation-background-color{
+    background-color: #edf1f2;
+}
+
+/* Main Divs */
+
+#orientation-content{
+    position: relative;
+    height: 100%;
+    padding-bottom: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    grid-area: 1;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+}
+
+/* Content div */
+
+#orientation-background{
+    background-image: linear-gradient(to right,rgba(255,255,255,1) 5%,rgba(255,255,255,0));
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr auto;
+    -ms-grid-columns: 40% 60%;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 100%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* Navigation div */
+#orientation-nav{
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    justify-content: space-evenly;
+    background-color: #363636;
+    padding: 1em;
+    z-index: 1;
+    grid-area: 2;
+}
+
+.orientation-nav-element{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+}
+
+.orientation-nav-img{
+    font-size: 5em;
+    margin: 0 auto;
+    color: white;
+}
+
+.orientation-btn:focus,.orientation-nav-element:focus{
+    outline: none;
+}
+
+.orientation-btn:focus > .orientation-nav-element{
+    outline: 2px solid rgb(0, 106, 124);
+}
+
+.orientation-nav-element:hover > .orientation-nav-img{
+    text-shadow: -1px -1px 20px rgb(0, 106, 124), 1px -1px 20px rgb(0, 106, 124), -1px 1px 20px rgb(0, 106, 124), 1px 1px 20px rgb(0, 106, 124);
+}
+
+.orientation-nav-element:hover{
+    cursor: pointer;
+    color: rgb(0, 106, 124);
+}
+
+.selected > .orientation-nav-img{
+    text-shadow: -1px -1px 20px rgb(0, 106, 124), 1px -1px 20px rgb(0, 106, 124), -1px 1px 20px rgb(0, 106, 124), 1px 1px 20px rgb(0, 106, 124);
+}
+
+#orientation-title{
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    align-items: center;
+    padding-top: 10%;
+    overflow: auto;
+    text-shadow: -1px -1px 20px #ffffff87, 1px -1px 20px #ffffff87, -1px 1px 20px #ffffff87, 1px 1px 20px #ffffff87;
+}
+
+#orientation-display{
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: 1 / 2 / 2 / 3;
+    font-size: 1.3em;
+    overflow: auto;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-kerning: none;
+    line-height: 1.3em;
+    background-color: rgb(0, 106, 124);
+    background-image: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.4));
+}
+
+#orientation-display a {
+    color: white;
+}
+
+#orientation-display a:hover{
+    color: #363636;
+}
+
+#orientation-display img{
+    width: inherit;
+    border-radius: 5%;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+
+#orientation-display h1, #orientation-display h2, #orientation-display h3, #orientation-display h4, #orientation-display h5{
+    margin: 0;
+}
+
+#orientation-display strong{
+    font-weight: 400;
+    font-family: "Stag Web";
+}
+
+/*Background div */
+#orientation-background-image{
+    object-fit: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+}
+
+.orientation-full{
+    height:100%;
+    width: 100%;
+    position: absolute;
+}
+
+.orientation-icon{
+    font-size: 3em;
+}
+
+#orientation-links{
+    margin-top: 20px;
+}
+
+#orientation-links i{
+    color: #00687c;
+    text-shadow: 1px 1px black;
+}
+#orientation-links i:hover{
+    color: #3B5998;
+}
+
+.orientation-tile{
+    background-color: rgb(80, 172, 200);
+    color: white;
+    width: 244px;
+    height: 120px;
+    text-align: left;
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    cursor: unset;
+}
+
+.orientation-tile-icon{
+    font-size: 3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.orientation-arrow{
+    color: rgb(0, 106, 124);
+    font-size: 6em;
+}
+
+.orientation-arrow-btn{
+    margin: 0 3vw;
+}
+
+.orientation-arrow-btn:focus,.orientation-arrow:focus{
+    outline: none;
+}
+
+.orientation-arrow-btn:focus > .orientation-arrow{
+    outline: 2px solid rgb(0, 106, 124);
+}
+
+
+.orientation-arrow:hover{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    text-shadow: -1px -1px 20px rgb(0, 106, 124), 1px -1px 20px rgb(0, 106, 124), -1px 1px 20px rgb(0, 106, 124), 1px 1px 20px rgb(0, 106, 124);
+}
+
+.orientation-display-inner{
+    height: 0px;
+}
+
+.orientation-tab-content{
+    max-width: 35em;
+    margin: 5vh 5vw;
+    position: absolute;
+    top: -9999em;
+    left: -9999em;
+}
+
+.orientation-tab-content.selected{
+    top: 0;
+    left: 0;
+    position: relative;
+}
+
+#orientation-image-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    display: none;
+    overflow: auto;
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#orientation-modal-image{
+    margin: auto;
+    max-width: 90%;
+    width: auto;
+}
+
+
+
+/* Edge */
+@supports (-ms-ime-align:auto) { 
+    /* Edge doesnt have support for space-evenly so we need to use space-between */
+    #orientation-nav { 
+        justify-content: space-between; 
+    } 
+    
+    #orientation-display{
+        background-color: rgba(80,172,200,1);
+    }
+    
+}
+
+/* IE 10 & 11 */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    #orientation-nav { 
+        justify-content: space-between; 
+    } 
+    
+    #orientation-display{
+        background-color: rgba(80,172,200,1);
+        position: relative;
+    }
+    
+    #orientation-main{
+        position: absolute;
+    }
+}
+
+
+/*Mobile*/
+
+@media screen and (max-width: 70em){
+
+    #orientation-main{
+        overflow-y: auto;
+    }
+    
+    #orientation-title h1{
+        font-size: 3em;
+        text-align: left;
+        max-width: 65vw;
+    }
+    
+    #orientation-title h2{
+        font-size: 1em;
+    }
+
+    #orientation-background{
+        background-image: linear-gradient(to bottom,white, rgba(255,255,255,0.2),white);
+        grid-template-columns: 100%;
+        grid-template-rows: auto 1fr;
+        -ms-grid-rows: auto 1fr;
+        -ms-grid-columns: 100%;
+    }
+
+    .orientation-arrows{
+        position: absolute;
+        right: 4%;
+        top: 1em;
+        margin: 0;
+    }
+
+    .orientation-arrow{
+        font-size: 3em;
+        margin-top: 0;
+    }
+    
+    #orientation-nav{
+        padding: 0;
+        padding-top: 1em;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        overflow: auto;
+        grid-area: unset;
+    }
+    .orientation-nav-element{
+        flex-grow: 1;
+        min-width: 8em;
+        padding: 0 0.5em;
+    }
+    #orientation-content{
+        padding: 0;
+        height: auto;
+    }
+
+    #orientation-display{
+        grid-area: 2 / 1 / 3 / 2;
+        font-size: 1.1em;
+        -ms-grid-row: 2;
+        -ms-grid-column: 1;
+        max-width: none;
+        overflow: initial;
+        position: relative;
+        padding-bottom: 10em;
+    }
+    
+    #orientation-title{
+        grid-area: 1 / 1 / 2 / 2;
+        -ms-grid-row: 1;
+        -ms-grid-row: 1;
+        padding-top: 0;
+        padding-bottom: 0;
+        align-items: center;
+        margin-left: 5%;
+        padding: 1em 0;
+        display: flex;
+        flex-direction: row;
+        overflow: unset;
+    }
+
+    .orientation-nav-img{
+        font-size: 3em;
+    }
+
+    
+    .orientation-tile{
+        margin: 0 auto;
+    }
+    
+}
+
