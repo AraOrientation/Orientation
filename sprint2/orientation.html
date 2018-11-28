@@ -10,7 +10,7 @@
         <div id="orientation-background">   
             <div id="orientation-title">
                 <h1>{{ page.model.data.properties.heading ? page.model.data.properties.heading : page.getTitle()}}</h1>
-                <div class="orientation-arrows flex-container orientation-tooltip" title="Click these arrows to go to the previous or next Category!">
+                <div class="orientation-arrows flex-container orientation-tooltip">
                     <div class="orientation-arrow-btn" ng-click="" onclick="previous()">
                         <span tabindex="-1" class="fa fa-angle-double-left orientation-arrow"></span>
                     </div>
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            <div id="orientation-display" class="orientation-tooltip" title="Content will be displayed here!">
+            <div id="orientation-display" class="orientation-tooltip">
                 <div id="tab1" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content1"></div>
                 <div id="tab2" ng-if="page.properties.content2" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content2"></div>
                 <div id="tab3" ng-if="page.properties.content3" class="orientation-tab-content" ng-bind-html="page.model.data.properties.content3"></div>
@@ -31,7 +31,7 @@
         
     </div>
     
-    <div id="orientation-nav" class="flex-container orientation-tooltip" style="display:none" title="Click these to switch between different content!">
+    <div id="orientation-nav" class="flex-container orientation-tooltip" style="display:none">
         <div class="orientation-btn" ng-click="" onclick="updateTab('tab1')">
             <span class="orientation-nav-element selected" tabindex="-1">
                 <div ng-class="page.properties.icon1 ? page.properties.icon1.key : 'fa fa-file-text'" class="orientation-nav-img"></div>
@@ -90,8 +90,31 @@
     
 <script>
 
+/*Reload the stylesheet if for some reason it fails to load */
+let styles = document.styleSheets;
+
+for(let i =0; i< styles.length; i++){
+	if(styles[i].href !== null && styles[i].href.includes("/8667")){
+		if(styles[i].cssRules.length == 0){
+			document.getElementById("myday-content").innerHTML += "<p>StyleSheet failed to load</p>";
+			document.getElementById("stylesheet-node-8667").href = styles[i].href +"?retry="+ new Date().getMilliseconds();
+			break;
+		}
+	}
+}
+
+
 //Determines Page Order
-let pages = ["","/myday","/your-campus-madras","/student-id-card","/digital-tools","/study","/campus-services","/additional-services","/student","/end"];
+let campus = localStorage.getItem('campus');
+if(campus == null){
+    campus = "madras";
+}
+let pages = ["","/myday","/your-campus-"+campus,"/student-id-card","/digital-tools","/study","/campus-services","/additional-services","/student","/end"];
+
+if(campus == "other"){
+    //remove any pages
+    pages.splice(2,1);
+}
 
 //Angular Controller for pulling data
 let con = angular.element(document.getElementById("myday")).controller()
@@ -101,6 +124,7 @@ let path = con.state.params.path;
 let currentPage = pages.indexOf(path.slice(11,path.length));
 let firstTime = localStorage.getItem('firstTime');
 let fromLanding = localStorage.getItem('fromLanding')
+
 let currentTab = 1;
 
 //Should we show the help overlay?
@@ -109,6 +133,11 @@ if(firstTime == "true"){
     
     jQuery.getScript("https://cdn.jsdelivr.net/npm/tooltipster@4.2.6/dist/js/tooltipster.bundle.min.js")
     .done(function(){
+        $("#orientation-nav").attr("title","Click these to switch between different content!");
+        $(".orientation-arrows").attr("title","Click these arrows to go to the previous or next Category!");
+        $("#orientation-display").attr("title","Content will be displayed here!");
+        
+        
         $('.orientation-tooltip').tooltipster({theme: 'tooltipster-noir', repositionOnScroll: true, trackOrigin: true, trigger: 'custom', animationDuration: 500, triggerClose: {click:true}});
     
         $("#orientation-nav").tooltipster('open');
