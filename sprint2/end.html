@@ -1,0 +1,96 @@
+<div class="orientation-landing-main">
+        
+    <div id="orientation-landing-content" class="flex-container flex-container-columns" style="display: none; background-image: url('{{ page.model.data.properties.backImage }}')">
+        
+        <div id="orientation-landing-top" class="flex-container">
+            
+            <div id="orientation-landing-title" class="flex-container flex-container-columns">
+                <img id="orientation-landing-ara-logo" src="https://mydayeu.blob.core.windows.net/ef475ff3-7cd1-4fa3-ba77-f63824f7c37c/pages/images/9095-image-1.png">
+            </div>
+            
+            <div id="orientation-angled-backdrop"></div>
+            
+            <div id="orientation-landing-sidebar" class="flex-container flex-container-columns">
+                <h1>All Ready?</h1>
+                <div id="orientation-landing-smaller">
+                    <h2>Hopefully now you are all set to start studying at Ara!</h2>
+                    <br>
+                    
+                    <h2>If you want more information on services:</h2>
+                    <a id="orientation-landing-services" class="orientation-landing-btn" href="" ng-click="" onclick="go('services')">
+                        <h2 class="orientation-landing-btn-inner" tabindex="-1"> Check out the Services Tile!</h2></a>
+                    <br>
+                    
+                    <h2>Also check out all Ara's Social Media:</h2>
+                    <div id="orientation-landing-social-media">
+                        <a href="https://www.facebook.com/AraCanterbury" target="_blank" class="orientation-landing-btn">
+                            <div class="fa fa-facebook-official orientation-landing-btn-inner" tabindex="-1"> </div></a>
+                        <a href="https://twitter.com/AraCanterbury" target="_blank" class="orientation-landing-btn">
+                            <div class="fa fa-twitter orientation-landing-btn-inner" tabindex="-1"> </div></a>
+                        <a href="http://www.youtube.com/channel/UCrLbfYVuD-MwYBsXswEOVgw" target="_blank" class="orientation-landing-btn" >
+                            <div class="fa fa-youtube-play orientation-landing-btn-inner" tabindex="-1"> </div></a>
+                        <a href="http://instagram.com/AraCanterbury" target="_blank" class="orientation-landing-btn">
+                            <div class="fa fa-instagram orientation-landing-btn-inner" tabindex="-1"> </div></a>
+                    </div>
+                    
+                </div>
+                <br>
+                <a id="{{page.properties.previousPage}}" ng-click="" href="" onclick="previous(this.id)" class="orientation-landing-btn">
+                    <h2 class="orientation-landing-btn-inner" tabindex="-1"><div class="fa fa-arrow-left orientation-rightarrow"></div>Previous Page </h2></a>
+                <a id="{{page.properties.firstPage}}" ng-click="" href="" onclick="restart(this.id)" class="orientation-landing-btn">
+                    <h2 class="orientation-landing-btn-inner" tabindex="-1">Go back to the start <div class="fa fa-arrow-right orientation-rightarrow"></div> </h2></a>
+                <a href="" ng-click="" onclick="home()" class="orientation-landing-btn">
+                    <h2 class="orientation-landing-btn-inner" tabindex="-1">Back to your dashboard</h2></a>
+    
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<script>
+
+let con = angular.element(document.getElementById("myday")).controller();
+
+$(function(){
+    //Set initial focus for accessability
+    $("#myday-content").focus();
+    
+    $("#orientation-landing-content").delay(100).fadeIn("fast");
+    $( window ).unload(function() {
+        $("#orientation-landing-content").fadeOut("fast");
+    });
+})
+
+localStorage.setItem('fromLanding',"true")
+
+function restart(pagePath){
+    go(pagePath);
+}
+
+function previous(pagePath){
+    go(pagePath);
+}
+
+function go(pagePath){
+    con.state.go('.',{path:pagePath})
+}
+
+//go to the dashboard screen
+function home(){
+    con.state.go('dashboard',{dashboardId: "home"})
+}
+
+
+//Keys for accessability
+$(document).keydown(function(e) {
+
+    if(e.which == 13) {
+        document.activeElement.click();
+    }
+})
+
+</script>
