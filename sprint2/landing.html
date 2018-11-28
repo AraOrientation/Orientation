@@ -1,0 +1,86 @@
+<div class="orientation-landing-main">
+        
+    <div id="orientation-landing-content" class="flex-container flex-container-columns" style="display: none; background-image: url('{{ page.model.data.properties.backImage }}')">
+        
+        <div id="orientation-landing-top" class="flex-container">
+            
+            <div id="orientation-landing-title" class="flex-container flex-container-columns">
+                <img id="orientation-landing-ara-logo" src="https://mydayeu.blob.core.windows.net/ef475ff3-7cd1-4fa3-ba77-f63824f7c37c/pages/images/9095-image-1.png">
+            </div>
+            
+            <div id="orientation-angled-backdrop"></div>
+            
+            <div id="orientation-landing-sidebar" class="flex-container flex-container-columns">
+                <h1>Kia Kaha</h1>
+                <h2>Welcome to Ara <br>{{myday.user.name ? myday.user.name : myday.user.uname}}!</h2>
+                <br>
+                    <div id="orientation-landing-smaller">
+                        <div class="flex-container" id="orientation-landing-campus">
+                            <a data-campus="madras" id="campus-madras" class="orientation-landing-btn" ng-click="" href="" onclick="changeCampus(this)"><h2 class="orientation-landing-btn-inner" tabindex="-1"><div class="fa fa-institution"></div> Madras</h2></a>
+                            <a data-campus="timaru" id="campus-timaru" class="orientation-landing-btn" ng-click="" href="" onclick="changeCampus(this)"><h2 class="orientation-landing-btn-inner" tabindex="-1"><div class="fa fa-institution"></div> Timaru</h2></a>
+                            <a data-campus="woolston" id="campus-woolston" class="orientation-landing-btn" ng-click="" href="" onclick="changeCampus(this)"><h2 class="orientation-landing-btn-inner" tabindex="-1"><div class="fa fa-institution"></div> Woolston</h2></a>
+                            <a data-campus="other" id="campus-other" class="orientation-landing-btn" ng-click="" href="" onclick="changeCampus(this)"><h2 class="orientation-landing-btn-inner" tabindex="-1"><div class="fa fa-institution"></div> Other</h2></a>
+                        </div>
+                    </div>
+                    <br>
+                    <a id="{{page.properties.nextPage}}" ng-click="" href="" onclick="nextPage(this.id)" class="orientation-landing-btn">
+                        <h2 class="orientation-landing-btn-inner" tabindex="-1">Begin your journey <wbr>here <div class="fa fa-arrow-right orientation-rightarrow"></div> </h2>
+                    </a>
+                    
+            </div>
+        </div>
+        
+    </div>
+    
+    
+</div>
+
+<script>
+
+
+$(function(){
+    //Set initial focus for accessability
+    $("#myday-content").focus();
+    
+    $("#orientation-landing-content").delay(100).fadeIn("slow");
+    $( window ).unload(function() {
+        $("#orientation-landing-content").fadeOut("fast");
+    });
+})
+
+if(localStorage.getItem('firstTime') === null){
+    localStorage.setItem('firstTime',"true");
+}
+
+localStorage.setItem('fromLanding',"true")
+
+let campus = localStorage.getItem('campus');
+
+if(campus == null){
+    changeCampus(document.getElementById('campus-madras'));
+} else {
+    changeCampus(document.getElementById('campus-'+campus));
+}
+
+let con = angular.element(document.getElementById("myday")).controller();
+
+function changeCampus(el){
+    $(".orientation-landing-btn").each(function(){
+        this.className = this.className.replace(" selected", "");
+    })
+    el.className += " selected";
+    localStorage.setItem('campus',el.dataset.campus);
+}
+
+function nextPage(pagePath){
+    con.state.go('.',{path:pagePath})
+}
+
+//Keys for accessability
+$(document).keydown(function(e) {
+
+    if(e.which == 13) {
+        document.activeElement.click();
+    }
+})
+</script>
