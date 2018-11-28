@@ -2,21 +2,16 @@
 
 @font-face {
     font-family: 'Stag Web';
-    src: url('https://rawgit.com/AraOrientation/Orientation/master/Stag-Book-Web.eot');
-    src: url('https://rawgit.com/AraOrientation/Orientation/master/Stag-Book-Web.woff') format('woff');
+    src: url('https://mydayeu.blob.core.windows.net/ef475ff3-7cd1-4fa3-ba77-f63824f7c37c/pages/images/9727-image-1.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
 }
 
-@font-face{
-    font-family: 'Futura';
-    src: url('https://rawgit.com/AraOrientation/Orientation/master/futura-pt-heavy.otf') format("opentype");
-}
 
 @font-face {
     font-family: 'Stag Sans Web';
-    src: url('https://rawgit.com/AraOrientation/Orientation/master/StagSans-Light-Web.woff') format('woff');
+    src: url('https://mydayeu.blob.core.windows.net/ef475ff3-7cd1-4fa3-ba77-f63824f7c37c/pages/images/9726-image-1.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
@@ -130,15 +125,18 @@
     outline: 2px solid rgb(0, 106, 124);
 }
 
-.orientation-nav-element:hover > .orientation-nav-img{
-    text-shadow: -1px -1px 20px rgb(0, 106, 124), 1px -1px 20px rgb(0, 106, 124), -1px 1px 20px rgb(0, 106, 124), 1px 1px 20px rgb(0, 106, 124);
-}
+@media (hover:hover) {
 
-.orientation-nav-element:hover{
-    cursor: pointer;
-    color: rgb(0, 106, 124);
-}
+    .orientation-nav-element:hover > .orientation-nav-img{
+        text-shadow: -1px -1px 20px rgb(0, 106, 124), 1px -1px 20px rgb(0, 106, 124), -1px 1px 20px rgb(0, 106, 124), 1px 1px 20px rgb(0, 106, 124);
+    }
+    
+    .orientation-nav-element:hover{
+        cursor: pointer;
+        color: rgb(0, 106, 124);
+    }
 
+}
 .selected > .orientation-nav-img{
     text-shadow: -1px -1px 20px rgb(0, 106, 124), 1px -1px 20px rgb(0, 106, 124), -1px 1px 20px rgb(0, 106, 124), 1px 1px 20px rgb(0, 106, 124);
 }
@@ -169,7 +167,7 @@
     flex-direction: column;
     color: white;
     font-kerning: none;
-    line-height: 1.3em;
+    line-height: 150%;
     background-color: rgb(0, 106, 124);
     background-image: linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.4));
 }
@@ -318,7 +316,7 @@
     } 
     
     #orientation-display{
-        background-color: rgba(80,172,200,1);
+
     }
     
 }
@@ -330,7 +328,6 @@
     } 
     
     #orientation-display{
-        background-color: rgba(80,172,200,1);
         position: relative;
     }
     
