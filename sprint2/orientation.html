@@ -90,19 +90,6 @@
     
 <script>
 
-/*Reload the stylesheet if for some reason it fails to load */
-let styles = document.styleSheets;
-
-for(let i =0; i< styles.length; i++){
-	if(styles[i].href !== null && styles[i].href.includes("/8667")){
-		if(styles[i].cssRules.length == 0){
-			document.getElementById("myday-content").innerHTML += "<p>StyleSheet failed to load</p>";
-			document.getElementById("stylesheet-node-8667").href = styles[i].href +"?retry="+ new Date().getMilliseconds();
-			break;
-		}
-	}
-}
-
 
 //Determines Page Order
 let campus = localStorage.getItem('campus');
