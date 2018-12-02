@@ -92,11 +92,11 @@
 
 
 //Determines Page Order
-let campus = localStorage.getItem('campus');
+var campus = localStorage.getItem('campus');
 if(campus == null){
     campus = "madras";
 }
-let pages = ["","/myday","/your-campus-"+campus,"/student-id-card","/digital-tools","/study","/campus-services","/additional-services","/student","/end"];
+var pages = ["","/myday","/your-campus-"+campus,"/student-id-card","/digital-tools","/study","/campus-services","/additional-services","/student","/end"];
 
 if(campus == "other"){
     //remove any pages
@@ -104,15 +104,15 @@ if(campus == "other"){
 }
 
 //Angular Controller for pulling data
-let con = angular.element(document.getElementById("myday")).controller()
-let path = con.state.params.path;
+var con = angular.element(document.getElementById("myday")).controller();
+var path = con.state.params.path;
 
 //Variables
-let currentPage = pages.indexOf(path.slice(11,path.length));
-let firstTime = localStorage.getItem('firstTime');
-let fromLanding = localStorage.getItem('fromLanding')
+var currentPage = pages.indexOf(path.slice(11,path.length));
+var firstTime = localStorage.getItem('firstTime');
+var fromLanding = localStorage.getItem('fromLanding');
 
-let currentTab = 1;
+var currentTab = 1;
 
 //Should we show the help overlay?
 if(firstTime == "true"){
@@ -160,7 +160,7 @@ $(function() {
     
     
     //Show the first tab
-    updateTab('tab1')
+    updateTab('tab1');
     
     //Draw any tiles in the content - needs to be run with a delay
     setTimeout(drawTiles,100);
@@ -189,7 +189,7 @@ function previous(){
 
 //Angular routing; change the path 
 function go(path){
-    con.state.go('.',{path:path})
+    con.state.go('.',{path:path});
 }
 
 //Hide the help overlay
@@ -204,26 +204,19 @@ function updateTab(tabName){
     changeTab();
 }
 
-function blur(evt){
-    console.log("lost focus "+evt)
-}
-
-function focus(evt){
-    console.log("got focus "+evt)
-}
 
 //Change Tabs
 function changeTab(){
     document.getElementById("tab"+currentTab).className += " selected";
-    let element = $('#orientation-nav').children()[currentTab-1]
+    var element = $('#orientation-nav').children()[currentTab-1];
     element.children[0].className += " selected";
     if(document.activeElement.className.indexOf("orientation-btn") !== -1){
         element.focus();
     }
     
     //scroll to the top
-    document.getElementById("orientation-main").scrollTop = 0
-    document.getElementById("orientation-display").scrollTop = 0
+    document.getElementById("orientation-main").scrollTop = 0;
+    document.getElementById("orientation-display").scrollTop = 0;
     
     //draw any tiles on this tab
     drawTiles();
@@ -231,10 +224,10 @@ function changeTab(){
 
 //Clears the current tab
 function clearTabs(){
-    let tabs = $(".orientation-tab-content");
-    let navs = $(".orientation-nav-element");
+    var tabs = $(".orientation-tab-content");
+    var navs = $(".orientation-nav-element");
 
-    for(i= 0; i < tabs.length; i++){
+    for(var i= 0; i < tabs.length; i++){
         tabs[i].className = tabs[i].className.replace(" selected", "");
     }
 
@@ -267,27 +260,26 @@ $(document).keydown(function(e) {
 
 //Draw a tile from the dashboard, i.e <abbr tite='title'>Calendar</abbr> Will become the Calendar tile
 function drawTiles(){
-    let all = document.getElementsByTagName("abbr");
+    var all = document.getElementsByTagName("abbr");
     if(all.length != 0){
-        for(i = 0; i < all.length; i++){
-            let el = all[i];
+        for(var i = 0; i < all.length; i++){
+            var el = all[i];
             if(el.title == "tile"){
-                let tileName = el.innerText;
-                let tile = con.dashboard.tiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText)})[0];
+                var tile = con.dashboard.tiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText);})[0];
                 
                 //check if the user hid the tile
                 if(tile == undefined){
-                    tile = con.dashboard.hiddenTiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText)})[0];
+                    tile = con.dashboard.hiddenTiles.filter( function(tile){return (tile.title == el.innerText || tile.appId == el.innerText);})[0];
                 }
                 
                 if(tile !== undefined){
                     
-                    let div = document.createElement("div");
+                    var div = document.createElement("div");
                     div.style.backgroundColor = "rgb("+tile.backgroundColor[0]+","+tile.backgroundColor[1]+","+tile.backgroundColor[2]+")";
                     div.className = "tile orientation-tile";
                     
-                    let divInner = document.createElement("div");
-                    divInner.className = "tile-inner orientation-tile-inner"
+                    var divInner = document.createElement("div");
+                    divInner.className = "tile-inner orientation-tile-inner";
                     div.appendChild(divInner);
                     
                     if(con.dashboard.gradient){
@@ -300,19 +292,19 @@ function drawTiles(){
                         divInner.style.boxShadow = "inset 0 0 0 1px rgba(255,255,255,1)";
                     }
                     
-                    let header = document.createElement("header")
+                    var header = document.createElement("header");
                     divInner.appendChild(header);
                     
-                    let h2 = document.createElement("h2");
-                    let text = document.createTextNode(tile.title);
+                    var h2 = document.createElement("h2");
+                    var text = document.createTextNode(tile.title);
                     h2.appendChild(text);
                     header.appendChild(h2);
                     
-                    let i = document.createElement("i");
-                    i.className = "orientation-tile-icon "+tile.icon;
-                    header.appendChild(i);
+                    var itag = document.createElement("i");
+                    itag.className = "orientation-tile-icon "+tile.icon;
+                    header.appendChild(itag);
                     
-                    el.parentNode.replaceChild(div,el)
+                    el.parentNode.replaceChild(div,el);
                     
                 } else {
                     //if we want to remove the arr anyway
@@ -324,12 +316,12 @@ function drawTiles(){
 
 //Image Modal
 
-let x = 0, currentX = 0 , y = 0, currentY = 0, scale = 1, currentScale = 1;
-let displayImage = document.getElementById("orientation-modal-image");
+var x = 0, currentX = 0 , y = 0, currentY = 0, scale = 1, currentScale = 1, maxDistX = 0, maxDistY = 0;
+var displayImage = document.getElementById("orientation-modal-image");
 displayImage.draggable = false;
 
 function updateImage(x,y,scale){
-    const transform = 'translateX(' + x + 'px) translateY(' + y + 'px) translateZ(0px) scale(' + scale + ',' + scale + ')';
+    var transform = 'translateX(' + x + 'px) translateY(' + y + 'px) translateZ(0px) scale(' + scale + ',' + scale + ')';
     displayImage.style.transform = transform;
     displayImage.style.WebkitTransform = transform;
     displayImage.style.msTransform = transform;
@@ -349,11 +341,11 @@ jQuery.getScript("https://hammerjs.github.io/dist/hammer.min.js").done(function(
     var hammertime = new Hammer(document.getElementById("orientation-image-modal"));
     hammertime.get('pinch').set({ enable: true });
     hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-    updatePos()
+    updatePos();
     
     hammertime.on('pinch pinchmove', function(ev){
         currentScale = Math.min(Math.max(0.5,ev.scale*scale),4);
-        updatePos()
+        updatePos();
         currentX = Math.min(maxDistX,Math.max(maxDistX*-1,x+ev.deltaX));
         currentY = Math.min(maxDistY,Math.max(maxDistY*-1,y+ev.deltaY));
         
@@ -361,12 +353,12 @@ jQuery.getScript("https://hammerjs.github.io/dist/hammer.min.js").done(function(
     });
     
     hammertime.on('pan', function(ev){
-        updatePos()
+        updatePos();
         currentX = Math.min(maxDistX,Math.max(maxDistX*-1,x+ev.deltaX));
         currentY = Math.min(maxDistY,Math.max(maxDistY*-1,y+ev.deltaY));
         
         updateImage(currentX,currentY,scale);
-    })
+    });
     
     hammertime.on('panend pancancel pinchend pinchcancel', function(){
         scale = currentScale;
@@ -380,13 +372,13 @@ function addImages(){
     //add onclick to images
     $("img").each(function(i){
        this.onclick = openModal;
-    })
-    $("#orientation-image-modal").click(function(){closeModal()});
+    });
+    $("#orientation-image-modal").click(function(){closeModal();});
 }
 
 function openModal(img){
     resetImage();
-    $("#orientation-modal-image").attr('src', img.target.src)
+    $("#orientation-modal-image").attr('src', img.target.src);
     $("#orientation-image-modal").css('display', 'flex');
 }
 
