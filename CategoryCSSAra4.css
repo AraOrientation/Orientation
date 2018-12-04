@@ -1,5 +1,27 @@
 /*Custom StyleSheet for Orientation Template*/
 
+@font-face {
+    font-family: 'Stag Web';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/Stag-Book-Web.eot');
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/Stag-Book-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
+@font-face{
+    font-family: 'Futura';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/futura-pt-heavy.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Stag Sans Web';
+    src: url('https://rawgit.com/AraOrientation/Orientation/master/StagSans-Light-Web.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+}
+
 /* Container Div */
 .orientation-main{
     width: 100%;
